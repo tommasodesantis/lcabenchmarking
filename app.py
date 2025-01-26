@@ -9,9 +9,41 @@ st.set_page_config(
     layout="wide"
 )
 
-# Title and description
+# Initialize session state for authentication
+if 'authenticated' not in st.session_state:
+    st.session_state.authenticated = False
+
+def authenticate(username, password):
+    return (username == st.secrets.credentials.username and 
+            password == st.secrets.credentials.password)
+
+# Login form
+if not st.session_state.authenticated:
+    st.title("Login")
+    st.markdown("Please login to access the LCA Benchmarking Tool")
+    
+    # Create login form using columns for better layout
+    col1, col2 = st.columns([2,1])
+    with col1:
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        if st.button("Login"):
+            if username == st.secrets.credentials.username and password == st.secrets.credentials.password:
+                st.session_state.authenticated = True
+                st.rerun()
+            else:
+                st.error("Invalid username or password")
+    st.stop()
+
+# Main app content (only shown when authenticated)
 st.title("LCA Benchmarking Analysis")
-st.markdown("Enter your query about environmental metrics for analysis and benchmarking.")
+st.markdown("Enter your query about environmental metrics for retrieval and benchmarking.")
+
+# Add logout button to sidebar
+with st.sidebar:
+    if st.button("Logout"):
+        st.session_state.authenticated = False
+        st.rerun()
 
 # Initialize the client
 @st.cache_resource
@@ -22,34 +54,22 @@ def get_client():
     os.environ["R2R_API_KEY"] = api_key
     return R2RClient("https://api.cloud.sciphi.ai")
 
-# Define custom system prompt for LCA benchmarking
-custom_prompt = """You are an expert LCA analyst specializing in benchmarking environmental metrics. Your task is to:
+# Define custom system prompt for environmental metrics benchmarking
+custom_prompt = """You are an environmental metrics expert focused on quick retrieval and benchmarking of LCA data. Your purpose is to:
 
-1. Compare any environmental metrics or values mentioned in the user's query with relevant data from the knowledge base
-2. When comparing metrics:
-   - Clearly state the units being compared
-   - Note if metrics are from different system boundaries or functional units
-   - Highlight if metrics are not directly comparable and explain why
-   - Use citation numbers [1], [2], etc. to reference specific data points
-3. If the user's values are:
-   - Significantly higher: Suggest potential reasons and areas for improvement
-   - Significantly lower: Flag this for verification and request more details about calculation methods
-   - Within expected range: Confirm this and provide context from similar cases
-4. Always specify:
-   - The year of the reference data
-   - Any relevant geographic or technological scope
-   - Key assumptions that might affect the comparison
+1. Quickly retrieve and present environmental metrics from the knowledge base
+2. Help users benchmark their LCA data against reference values
+3. Provide clear, concise comparisons with proper citations
+
+When responding:
+- Always cite your sources using [1], [2], etc. and adding a reference section at the explaining what are the sources connected to the numbers.
+- State the year and scope of the data
+- Highlight any limitations or assumptions
+- If benchmarking user data, try to clearly hypothesize any deviations from reference values
 
 Query: {query}
 
 Context: {context}
-
-Provide a structured response with:
-1. Direct comparison of metrics
-2. Context and analysis
-3. Recommendations or follow-up questions if needed
-
-Remember: If crucial information is missing to make a fair comparison (such as functional unit or system boundaries), explicitly state what additional information would be needed.
 
 Response:"""
 
@@ -69,8 +89,13 @@ if st.button("Analyze"):
                 },
                 task_prompt_override=custom_prompt
             )
-            st.markdown("### Analysis Results")
-            st.write(response)
+            # Extract just the completion from the response
+            if isinstance(response, dict) and 'results' in response:
+                completion = response['results'].get('completion', '')
+                st.markdown("### Analysis Results")
+                st.markdown(completion)
+            else:
+                st.error("Unexpected response format")
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
             st.info("Please check your API key and try again.")
@@ -79,8 +104,8 @@ if st.button("Analyze"):
 with st.sidebar:
     st.header("About")
     st.markdown("""
-    This tool helps analyze and benchmark environmental metrics using LCA data.
+    This tool helps retrieve and benchmark environmental metrics using AI connected to an LCA database.
     
     Enter your query about environmental impacts, carbon footprints, or other 
-    sustainability metrics to get detailed analysis and comparisons.
+    sustainability metrics to get data and comparisons.
     """)
