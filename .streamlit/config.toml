@@ -1,2 +1,11 @@
+[browser]
+gatherUsageStats = false
+
+[server]
+enableStaticServing = false
+
+[theme]
+showHeader = false
+
 [menu]
-hide_menu_item = "github"
+hide_menu_item = ["github", "about", "report"]
