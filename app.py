@@ -59,11 +59,12 @@ custom_prompt = """You are an environmental metrics expert focused on quick retr
 
 1. Quickly retrieve and present environmental metrics from the knowledge base
 2. Help users benchmark their LCA data against reference values
-3. Provide clear, concise comparisons with proper citations
+3. Provide clear but concise comparisons with proper citations
+4. Use tables at the bottom of the response to visualize the comparisons when necessary 
 
 When responding:
 - Always cite your sources using [1], [2], etc. and adding a reference section at the explaining what are the sources connected to the numbers.
-- State the year and scope of the data
+- Always mention year, country, date and scope of the data. If any of this info is not available, state it clearly
 - Highlight any limitations or assumptions
 - If benchmarking user data, try to clearly hypothesize any deviations from reference values
 
@@ -74,7 +75,7 @@ Context: {context}
 Response:"""
 
 # Create the Streamlit interface
-query = st.text_area("Enter your environmental metrics query:", "What's the carbon footprint of honey?", height=100)
+query = st.text_area("Enter your environmental metrics query:", "My honey in a glass has a carbon footprint of 1 kg CO2eq/kg, how does it benchmark?", height=100)
 
 if st.button("Analyze"):
     with st.spinner("Analyzing..."):
