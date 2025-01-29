@@ -108,9 +108,6 @@ with st.sidebar:
     I'm working on expanding the database to include as many LCA data as possible from published studies. 
                 
     My mission is to help LCA professionals to benchmark their results instantly and accurately.
-                    
-    Enter your query about environmental impacts, carbon footprints, or other 
-    sustainability metrics to get data and comparisons.
     
     ---
     Developed by [Tommaso De Santis](https://www.linkedin.com/in/tommaso-de-santis/)
