@@ -150,7 +150,7 @@ if not st.session_state.authenticated:
     left_col, center_col, right_col = st.columns([1,2,1])
     
     with center_col:
-        st.title("🌱 Welcome to LCA Benchmarker")       
+        st.title("🌱 Welcome to LCA Benchmarker")
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
         if st.button("Login", use_container_width=True):
