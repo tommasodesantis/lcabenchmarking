@@ -19,15 +19,14 @@ def authenticate(username, password):
 
 # Login form
 if not st.session_state.authenticated:
-    st.title("Login")
-    st.markdown("Please login to access the LCA Benchmarking Tool")
+    # Create three columns for centering, with the middle column containing the form
+    left_col, center_col, right_col = st.columns([1,2,1])
     
-    # Create login form using columns for better layout
-    col1, col2 = st.columns([2,1])
-    with col1:
+    with center_col:
+        st.title("🌱 Welcome to LCA Benchmarker")       
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
-        if st.button("Login"):
+        if st.button("Login", use_container_width=True):
             if username == st.secrets.credentials.username and password == st.secrets.credentials.password:
                 st.session_state.authenticated = True
                 st.rerun()
@@ -37,7 +36,6 @@ if not st.session_state.authenticated:
 
 # Main app content (only shown when authenticated)
 st.title("LCA Benchmarking Analysis")
-st.markdown("Enter your query about environmental metrics for retrieval and benchmarking.")
 
 # Add logout button to sidebar
 with st.sidebar:
@@ -105,8 +103,15 @@ if st.button("Analyze"):
 with st.sidebar:
     st.header("About")
     st.markdown("""
-    This tool helps retrieve and benchmark environmental metrics using AI connected to an LCA database.
-    
+    This tool helps retrieve and benchmark environmental metrics using AI connected to an LCA database (currently only Idemat).
+
+    I'm working on expanding the database to include as many LCA data as possible from published studies. 
+                
+    My mission is to help LCA professionals to benchmark their results instantly and accurately.
+                    
     Enter your query about environmental impacts, carbon footprints, or other 
     sustainability metrics to get data and comparisons.
+    
+    ---
+    Developed by [Tommaso De Santis](https://www.linkedin.com/in/tommaso-de-santis/)
     """)
