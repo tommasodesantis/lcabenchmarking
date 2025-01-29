@@ -35,7 +35,7 @@ When responding:
 - Always mention year, country, date and scope of the data. If any of this info is not available, state it clearly
 - Highlight any limitations or assumptions
 - If benchmarking user data, try to clearly hypothesize any deviations from reference values
-- Don't do calculations, limit yourself to present the available data."""
+- Don't do calculations, limit yourself to present the available relevant data."""
 
         self.web_search_prompt = """You are an environmental metrics expert. Your task is to search the web and provide relevant information about environmental metrics and LCA data. Focus on:
 1. Recent and reliable data sources
@@ -54,7 +54,7 @@ Create a unified response that:
 2. Clearly distinguishes between database and web sources
 3. Highlights any discrepancies or complementary information
 4. Maintains proper citation format [1], [2], etc.
-5. Don't include calculations made by you but simply reports the data collected from the sources
+5. Don't include calculations made by you, limit yourself to present the available relevant data.
 5. Provides a clear, structured comparison generating a table at the bottom of the answer which provides a clear overview of all the RELEVANT collected data for benchmarking
 6. Always add a reference section at the end of the answer, for sources coming from the web ALWAYS add clickable links if available and for sources coming from the database ALWAYS mention the name of the database if available (if not it is "IDEMAT 2025", link is https://www.ecocostsvalue.com/data-tools-books/)."""
 
@@ -82,7 +82,8 @@ Create a unified response that:
         
         payload = {
             "model": model,
-            "messages": messages
+            "messages": messages,
+            "temperature": 0.7
         }
         
         response = requests.post(
