@@ -54,6 +54,7 @@ Create a unified response that:
 2. Clearly distinguishes between database and web sources
 3. Highlights any discrepancies or complementary information
 4. Maintains proper citation format [1], [2], etc.
+5. Don't include calculations made by you but simply reports the data collected from the sources
 5. Provides a clear, structured comparison generating a table at the bottom of the answer which provides a clear overview of all the RELEVANT collected data for benchmarking
 6. Always add a reference section at the end of the answer, for sources coming from the web ALWAYS add clickable links if available and for sources coming from the database ALWAYS mention the name of the database if available (if not it is "IDEMAT 2025", link is https://www.ecocostsvalue.com/data-tools-books/)."""
 
