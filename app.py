@@ -146,8 +146,12 @@ if 'authenticated' not in st.session_state:
     st.session_state.authenticated = False
 
 def authenticate(username, password):
-    return (username == st.secrets.credentials.username and 
-            password == st.secrets.credentials.password)
+    usernames = st.secrets.usernames
+    passwords = st.secrets.passwords
+    if username in usernames:
+        idx = usernames.index(username)
+        return password == passwords[idx]
+    return False
 
 # Login form
 if not st.session_state.authenticated:
