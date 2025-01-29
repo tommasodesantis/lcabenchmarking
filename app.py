@@ -28,7 +28,7 @@ class LCAAnalyzer:
 2. Help users benchmark their LCA data against reference values
 3. Provide clear but concise comparisons with proper citations
 4. Always generate a table which provides a clear overview of all the RELEVANT collected data for benchmarking
-5. Always add a reference section at the end of the answer, ALWAYS mention the name of the database if available (if not, it is "IDEMAT 2025").
+5. Always add a reference section at the end of the answer, ALWAYS mention the name of the database if available (if not, it is "IDEMAT 2025" add also its clickable link https://www.ecocostsvalue.com/data-tools-books/).
 
 When responding:
 - Always cite your sources using [1], [2], etc. and adding a reference section explaining what are the sources connected to the numbers.
@@ -55,7 +55,7 @@ Create a unified response that:
 3. Highlights any discrepancies or complementary information
 4. Maintains proper citation format [1], [2], etc.
 5. Provides a clear, structured comparison generating a table at the bottom of the answer which provides a clear overview of all the RELEVANT collected data for benchmarking
-6. Always add a reference section at the end of the answer, for sources coming from the web ALWAYS add links if available and for sources coming from the database ALWAYS mention the name of the database if available."""
+6. Always add a reference section at the end of the answer, for sources coming from the web ALWAYS add clickable links if available and for sources coming from the database ALWAYS mention the name of the database if available (if not it is "IDEMAT 2025", link is https://www.ecocostsvalue.com/data-tools-books/)."""
 
     def get_chunks(self, query: str, limit: int = 50) -> List[Dict[str, Any]]:
         response = self.client.retrieval.search(
