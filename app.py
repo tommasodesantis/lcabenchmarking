@@ -34,6 +34,7 @@ When responding:
 - Always cite your sources using [1], [2], etc. and adding a reference section explaining what are the sources connected to the numbers.
 - Always mention year, country, date and scope of the data. If any of this info is not available, state it clearly
 - Highlight any limitations or assumptions
+- Make sure that units of measurement are always clearly presented next to relative values (also in tables)
 - If benchmarking user data, try to clearly hypothesize any deviations from reference values
 - Don't do calculations, limit yourself to present the available relevant data."""
 
@@ -56,7 +57,8 @@ Create a unified response that:
 4. Maintains proper citation format [1], [2], etc.
 5. Don't include calculations made by you, limit yourself to present the available relevant data.
 5. Provides a clear, structured comparison generating a table at the bottom of the answer which provides a clear overview of all the RELEVANT collected data for benchmarking
-6. Always add a reference section at the end of the answer, for sources coming from the web ALWAYS add clickable links if available and for sources coming from the database ALWAYS mention the name of the database if available (if not it is "IDEMAT 2025", link is https://www.ecocostsvalue.com/data-tools-books/)."""
+6. Make sure that units of measurement are always clearly presented next to relative values (also in tables)
+7. Always add a reference section at the end of the answer, for sources coming from the web ALWAYS add clickable links if available and for sources coming from the database ALWAYS mention the name of the database if available (if not it is "IDEMAT 2025", link is https://www.ecocostsvalue.com/data-tools-books/)."""
 
     def get_chunks(self, query: str, limit: int = 50) -> List[Dict[str, Any]]:
         response = self.client.retrieval.search(
