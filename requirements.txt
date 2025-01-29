@@ -5,3 +5,4 @@ numpy
 nest_asyncio
 requests
 asyncio
+aiohttp

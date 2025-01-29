@@ -1,9 +1,10 @@
 import os
 import json
 import requests
+import aiohttp
 import streamlit as st
 import nest_asyncio
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Union, AsyncGenerator
 from r2r import R2RClient
 import asyncio
 
@@ -39,7 +40,7 @@ When responding:
 - Don't do calculations, limit yourself to present the available relevant data."""
 
         self.web_search_prompt = """You are an environmental metrics expert. Your task is to search the web and provide relevant information about environmental metrics and LCA data. Focus on:
-1. Recent and reliable data sources
+1. Reliable data sources
 2. Scientific publications and official reports
 3. Clear comparisons and benchmarks
 4. ALWAYS incldue proper attribution of sources with links
@@ -69,7 +70,21 @@ Create a unified response that:
         )
         return response["results"]["chunk_search_results"]
 
-    async def process_with_llm(self, query: str, context: str, model: str, system_prompt: str) -> str:
+    def parse_sse_chunk(self, chunk: bytes) -> str:
+        """Parse a chunk of SSE data and extract the content."""
+        if not chunk:
+            return ""
+        
+        try:
+            data = json.loads(chunk.decode('utf-8').split('data: ')[1])
+            if data.get('choices') and len(data['choices']) > 0:
+                delta = data['choices'][0].get('delta', {})
+                return delta.get('content', '')
+        except (json.JSONDecodeError, IndexError, KeyError):
+            pass
+        return ""
+
+    async def process_with_llm(self, query: str, context: str, model: str, system_prompt: str, use_streaming: bool = True) -> Union[str, AsyncGenerator[str, None]]:
         headers = {
             "Authorization": f"Bearer {self.openrouter_api_key}",
             "Content-Type": "application/json",
@@ -85,23 +100,47 @@ Create a unified response that:
         payload = {
             "model": model,
             "messages": messages,
-            "temperature": 0.7
+            "temperature": 0.7,
+            "stream": use_streaming
         }
-        
-        response = requests.post(
-            "https://openrouter.ai/api/v1/chat/completions",
-            headers=headers,
-            json=payload
-        )
-        result = response.json()
-        return result["choices"][0]["message"]["content"]
+
+        try:
+            if use_streaming:
+                async def stream_response():
+                    async with aiohttp.ClientSession() as session:
+                        async with session.post(
+                            "https://openrouter.ai/api/v1/chat/completions",
+                            headers=headers,
+                            json=payload
+                        ) as response:
+                            async for line in response.content:
+                                if line:
+                                    content = self.parse_sse_chunk(line)
+                                    if content:
+                                        yield content
+                return stream_response()
+            else:
+                # Fallback to non-streaming
+                response = requests.post(
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    headers=headers,
+                    json=payload
+                )
+                result = response.json()
+                return result["choices"][0]["message"]["content"]
+        except Exception as e:
+            if use_streaming:
+                # If streaming fails, fallback to non-streaming
+                return await self.process_with_llm(query, context, model, system_prompt, use_streaming=False)
+            raise e
 
     async def web_search(self, query: str) -> str:
         return await self.process_with_llm(
             query=query,
             context="Please search the web for relevant LCA and environmental metrics data.",
             model="perplexity/sonar-reasoning",
-            system_prompt=self.web_search_prompt
+            system_prompt=self.web_search_prompt,
+            use_streaming=False
         )
 
     async def merge_results(self, database_result: str, web_result: str, query: str) -> str:
@@ -118,7 +157,7 @@ Web Search Results:
             system_prompt=self.merger_prompt
         )
 
-    async def analyze(self, query: str, include_web_search: bool = False) -> str:
+    async def analyze(self, query: str, include_web_search: bool = False) -> Union[str, AsyncGenerator[str, None]]:
         chunks = self.get_chunks(query)
         context = "\n\n".join([chunk["text"] for chunk in chunks])
         
@@ -127,19 +166,31 @@ Web Search Results:
                 query=query,
                 context=context,
                 model="openai/gpt-4o-mini",
-                system_prompt=self.retrieval_prompt
+                system_prompt=self.retrieval_prompt,
+                use_streaming=True
             )
         else:
-            database_result = await self.process_with_llm(
+            # For web search, we need to collect results before merging
+            database_result = ""
+            async for chunk in await self.process_with_llm(
                 query=query,
                 context=context,
                 model="openai/gpt-4o-mini",
-                system_prompt=self.retrieval_prompt
-            )
+                system_prompt=self.retrieval_prompt,
+                use_streaming=True
+            ):
+                database_result += chunk
             
             web_result = await self.web_search(query)
             
-            return await self.merge_results(database_result, web_result, query)
+            # Stream the merged results
+            return await self.process_with_llm(
+                query=query,
+                context=f"""Database Search Results:\n{database_result}\n\nWeb Search Results:\n{web_result}""",
+                model="openai/gpt-4o-mini",
+                system_prompt=self.merger_prompt,
+                use_streaming=True
+            )
 
 # Initialize session state for authentication
 if 'authenticated' not in st.session_state:
@@ -212,24 +263,37 @@ if st.button("Analyze"):
     analyzer = get_analyzer()
     
     try:
-        with st.spinner("Analyzing..."):
-            # Create a placeholder for the progress
-            progress_placeholder = st.empty()
+        # Create placeholders for output
+        progress_placeholder = st.empty()
+        output_placeholder = st.empty()
+        
+        async def process_stream():
+            accumulated_text = ""
             
-            # Run the analysis
             if include_web_search:
                 progress_placeholder.text("Searching database and web, this might take a few minutes...")
-            result = asyncio.run(analyzer.analyze(query, include_web_search))
             
-            if include_web_search:
-                progress_placeholder.text("Merging results...")
+            # Get the streaming response
+            result = await analyzer.analyze(query, include_web_search)
             
-            # Clear the progress placeholder
+            # Handle both streaming and non-streaming responses
+            if isinstance(result, str):
+                # Non-streaming response
+                output_placeholder.markdown(result)
+            else:
+                # Streaming response
+                output_placeholder.markdown("### Analysis Results")
+                content_placeholder = st.empty()
+                
+                async for chunk in result:
+                    accumulated_text += chunk
+                    content_placeholder.markdown(accumulated_text)
+            
+            # Clear progress placeholder when done
             progress_placeholder.empty()
-            
-            # Display results
-            st.markdown("### Analysis Results")
-            st.markdown(result)
+        
+        # Run the async function
+        asyncio.run(process_stream())
             
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
