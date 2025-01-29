@@ -2,3 +2,6 @@ streamlit
 r2r
 pandas
 numpy
+nest_asyncio
+requests
+asyncio
