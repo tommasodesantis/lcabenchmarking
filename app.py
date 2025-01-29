@@ -27,13 +27,15 @@ class LCAAnalyzer:
 1. Quickly retrieve and present environmental metrics from the knowledge base
 2. Help users benchmark their LCA data against reference values
 3. Provide clear but concise comparisons with proper citations
-4. Use tables at the bottom of the response to visualize the comparisons when necessary
+4. Always generate a table which provides a clear overview of all the RELEVANT collected data for benchmarking
+5. Always add a reference section at the end of the answer, ALWAYS mention the name of the database if available (if not, it is "IDEMAT 2025").
 
 When responding:
 - Always cite your sources using [1], [2], etc. and adding a reference section explaining what are the sources connected to the numbers.
 - Always mention year, country, date and scope of the data. If any of this info is not available, state it clearly
 - Highlight any limitations or assumptions
-- If benchmarking user data, try to clearly hypothesize any deviations from reference values"""
+- If benchmarking user data, try to clearly hypothesize any deviations from reference values
+- Don't do calculations, limit yourself to present the available data."""
 
         self.web_search_prompt = """You are an environmental metrics expert. Your task is to search the web and provide relevant information about environmental metrics and LCA data. Focus on:
 1. Recent and reliable data sources
