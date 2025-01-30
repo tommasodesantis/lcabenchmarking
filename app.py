@@ -36,6 +36,7 @@ When responding:
 - Always mention year, country, date and scope of the data. If any of this info is not available, state it clearly
 - Highlight any limitations or assumptions
 - Make sure that units of measurement are always clearly presented next to relative values (also in tables)
+- Always highlight when there are discrepancies between the unit of measurements of the benchmarked metrics
 - If benchmarking user data, try to clearly hypothesize any deviations from reference values
 - Don't do calculations, limit yourself to present the available relevant data."""
 
@@ -43,7 +44,7 @@ When responding:
 1. Reliable data sources
 2. Scientific publications and official reports
 3. Clear comparisons and benchmarks
-4. ALWAYS incldue proper attribution of sources with links
+4. ALWAYS include proper attribution of sources WITH links to the original source
 
 Keep your response focused and analytical."""
 
@@ -59,9 +60,10 @@ Create a unified response that:
 5. Don't include calculations made by you, limit yourself to present the available relevant data.
 5. Provides a clear, structured comparison generating a table at the bottom of the answer which provides a clear overview of all the RELEVANT collected data for benchmarking
 6. Make sure that units of measurement are always clearly presented next to relative values (also in tables)
-7. Always add a reference section at the end of the answer which includes ALL the sources, for sources coming from the web ALWAYS add clickable links if available and for sources coming from the database ALWAYS mention the name of the database if available (if not it is "IDEMAT 2025", link is https://www.ecocostsvalue.com/data-tools-books/)."""
+7. Always highlight when there are discrepancies between the unit of measurements of the benchmarked metrics
+8. Always add a reference section at the end of the answer which includes ALL the sources, for sources coming from the web ALWAYS add precise names and clickable links (if link not available then just precise names) and for sources coming from the database ALWAYS mention the name of the database if available (if not it is "IDEMAT 2025", link is https://www.ecocostsvalue.com/data-tools-books/)."""
 
-    def get_chunks(self, query: str, limit: int = 50) -> List[Dict[str, Any]]:
+    def get_chunks(self, query: str, limit: int = 30) -> List[Dict[str, Any]]:
         response = self.client.retrieval.search(
             query=query,
             search_settings={
@@ -153,7 +155,7 @@ Web Search Results:
         return await self.process_with_llm(
             query=query,
             context=context,
-            model="openai/gpt-4o-mini",
+            model="meta-llama/llama-3.3-70b-instruct",
             system_prompt=self.merger_prompt
         )
 
@@ -165,29 +167,19 @@ Web Search Results:
             return await self.process_with_llm(
                 query=query,
                 context=context,
-                model="openai/gpt-4o-mini",
+                model="meta-llama/llama-3.3-70b-instruct",
                 system_prompt=self.retrieval_prompt,
                 use_streaming=True
             )
         else:
-            # For web search, we need to collect results before merging
-            database_result = ""
-            async for chunk in await self.process_with_llm(
-                query=query,
-                context=context,
-                model="openai/gpt-4o-mini",
-                system_prompt=self.retrieval_prompt,
-                use_streaming=True
-            ):
-                database_result += chunk
-            
+            # For web search, directly merge raw chunks with web search results
             web_result = await self.web_search(query)
             
             # Stream the merged results
             return await self.process_with_llm(
                 query=query,
-                context=f"""Database Search Results:\n{database_result}\n\nWeb Search Results:\n{web_result}""",
-                model="openai/gpt-4o-mini",
+                context=f"""Database Search Results:\n{context}\n\nWeb Search Results:\n{web_result}""",
+                model="meta-llama/llama-3.3-70b-instruct",
                 system_prompt=self.merger_prompt,
                 use_streaming=True
             )
