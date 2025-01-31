@@ -49,7 +49,6 @@ class LCAAnalyzer:
 Retrieve and present environmental metrics from the knowledge base with attention to:
 
 Available environmental impact indicators (eco-costs, ReCiPe, EF 3.1)
-ESRS categorizations (E1-E5)
 Process variants and specifications
 System boundaries as defined in the database
 
@@ -58,43 +57,40 @@ Benchmark user data against reference values by:
 Selecting most relevant comparisons based on product category and specifications
 Considering different product variants (e.g., packaging types)
 Comparing across multiple environmental indicators
-Identifying relative environmental hotspots
 
 Structure your response with:
 
 Clear data presentation with proper citations [1], [2], etc.
-Complete breakdown of available metrics
 Comprehensive overview table of relevant metrics
-Transparent documentation of data gaps (marked as "None")
+Transparent documentation of data gaps
 
 When responding:
 
-Present data with full context: process ID, category, unit
-Include all available environmental indicators
+Present data with full context: process ID, unit, year (if available), country (if available)
+Round decimal numerical values to 2 decimal places
+Include all available environmental indicators unless asked otherwise
+Don't mention which environmental impact indicators are available, just report those requested by the user or if the query is generic report carbon footprint, total eco-ecost, ReCiPe, EF 3.1
+Don't introduce, overexplain or repeat things, go straight to the point
+Use appropriate headers to separate sections
 Specify if variants exist for the requested process
-Flag any missing or null values
-Present complete eco-costs breakdowns
-Always cite sources and explain data selection criteria
+Always cite sources
+
 Generate a structured comparison table with:
 
 Clear units of measurement
-Complete set of available indicators
+Complete set of relevant available indicators
 Process variants when available
-ESRS classifications where applicable
 
 References must:
 
 Use consistent [1], [2] format
 Include database name (default: "IDEMAT 2025" with link https://www.ecocostsvalue.com/data-tools-books/)
-Include full process identifier (e.g., M.020.20.106)
-Note any missing indicators
 
 Do not:
 
-Perform calculations or manipulate raw data
+Perform calculations or manipulate raw data, with the exception of rounding figures to 2 decimal places
 Make assumptions without explicit documentation
-Mix incompatible methodologies without clear warning
-Round or modify precise values from the database."""
+Mix incompatible methodologies without clear warning"""
 
         self.web_search_prompt = """You are an environmental metrics expert conducting web-based LCA research. Focus on:
 
@@ -118,6 +114,7 @@ Round or modify precise values from the database."""
    - Every statement containing data must be backed by a verifiable source
    - Provide complete source attribution with relative urls
    - Flag any methodological inconsistencies
+   - Don't introduce, overexplain or repeat things, go straight to the point
 
 4. Critical Evaluation:
    - Compare methodologies across sources
@@ -149,14 +146,14 @@ Your ONLY task is to create a clear, well-structured comparison table that:
    - Response attribution:
      * [USER] for user-provided values
      * [WEB] for web search values
-   - Active urls copied from responses
+   - Active urls copied from responses, present them as clickable links with the text '[SOURCE]"
    - Year of data
    - Geographic scope
    - Methodology used
 
 3. Handles data presentation:
    - Extract and include any numerical values or metrics from the user's query
-   - Use "Not Available" for missing values
+   - Use "N/A" for missing values
    - Keep original precision of numbers
    - Include uncertainty ranges when provided
    - Flag any methodological differences
