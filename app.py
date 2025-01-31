@@ -54,8 +54,8 @@ System boundaries as defined in the database
 
 Benchmark user data against reference values by:
 
-Selecting most relevant comparisons based on product category and specifications
-Considering different product variants (e.g., packaging types)
+Selecting ONLY THE MOST RELEVANT comparisons based on product category and specifications
+Focus in particular on different product variants (e.g., packaging types)
 Comparing across multiple environmental indicators
 
 Structure your response with:
@@ -122,15 +122,16 @@ Mix incompatible methodologies without clear warning"""
    - Note regional variations if available
 
 Always include:
-- A reference section at the end which MUST CONTAIN relative urls of sources in extended format
+- IMPORTANT: a reference section at the end which MUST CONTAIN relative urls of sources in extended format
 - Publication dates and geographic scope
 - Methodological framework used
 - Data quality indicators
 - Uncertainty ranges where available"""
 
-        self.merger_prompt = """You are an environmental metrics expert tasked with creating a comprehensive comparison table from two sources:
+        self.merger_prompt = """You are an environmental metrics expert tasked with creating a comprehensive comparison table from three sources:
 1. The user's query (which may contain values to benchmark)
-2. Web search results (containing broader context and recent information)
+2. Database results (containing structured LCA metrics)
+3. Web search results (containing broader context and recent information)
 
 Your ONLY task is to create a clear, well-structured comparison table that:
 
@@ -239,17 +240,13 @@ Simply create a comprehensive, well-structured table that allows easy comparison
                 # Log the error for debugging
                 print(f"Streaming error: {str(e)}")
                 # Fallback to non-streaming
-                try:
-                    response = requests.post(
-                        "https://openrouter.ai/api/v1/chat/completions",
-                        headers=headers,
-                        json={**payload, "stream": False}
-                    )
-                    result = response.json()
-                    yield result["choices"][0]["message"]["content"]
-                except Exception as fallback_error:
-                    print(f"Fallback error: {str(fallback_error)}")
-                    raise
+                response = requests.post(
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    headers=headers,
+                    json={**payload, "stream": False}
+                )
+                result = response.json()
+                yield result["choices"][0]["message"]["content"]
 
         if use_streaming:
             async for chunk in stream_response():
@@ -317,7 +314,7 @@ Simply create a comprehensive, well-structured table that allows easy comparison
                     yield {"section": "web", "content": chunk}
                 
                 # Generate comparison table only after web search is complete
-                merged_context = f"""User Query (with values to benchmark):\n{query}\n\nWeb Search Results:\n{web_result}"""
+                merged_context = f"""User Query (with values to benchmark):\n{query}\n\nDatabase Results:\n{db_result}\n\nWeb Search Results:\n{web_result}"""
                 table_stream = self.process_with_llm(
                     query=query,
                     context=merged_context,
@@ -402,37 +399,53 @@ if st.button("Analyze"):
     analyzer = get_analyzer()
     
     try:
-        # Create placeholders for output
         progress_placeholder = st.empty()
         
         async def process_stream():
             if include_web_search:
                 progress_placeholder.text("Searching database and web, this might take a few minutes...")
                 
-                # Create placeholders for each section
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.markdown("### Database Search Results")
+                # Create tabs instead of columns for better space management
+                tabs = st.tabs(["Database Results", "Web Results", "Comparison Table"])
+                
+                with tabs[0]:
                     db_placeholder = st.empty()
-                with col2:
-                    st.markdown("### Web Search Results")
+                with tabs[1]:
                     web_placeholder = st.empty()
-                st.markdown("### Comparison Table")
-                table_placeholder = st.empty()
+                with tabs[2]:
+                    table_placeholder = st.empty()
                 
                 # Initialize accumulated text for each section
                 db_text = ""
                 web_text = ""
                 table_text = ""
                 
+                # Add custom CSS for table overflow
+                st.markdown("""
+                    <style>
+                        .stMarkdown {
+                            overflow-x: auto;
+                            max-width: 100%;
+                        }
+                        table {
+                            white-space: nowrap;
+                            display: block;
+                            max-width: -moz-fit-content;
+                            max-width: fit-content;
+                            margin: 0 auto;
+                            overflow-x: auto;
+                        }
+                    </style>
+                """, unsafe_allow_html=True)
+                
                 # Process streaming results
                 async for chunk in analyzer.analyze(query, include_web_search=True):
                     if chunk["section"] == "database":
                         db_text += chunk["content"]
-                        db_placeholder.markdown(f'<div class="database-container">{db_text}</div>', unsafe_allow_html=True)
+                        db_placeholder.markdown(f'<div class="database-container">\n{db_text}</div>', unsafe_allow_html=True)
                     elif chunk["section"] == "web":
                         web_text += chunk["content"]
-                        web_placeholder.markdown(f'<div class="web-container">{web_text}</div>', unsafe_allow_html=True)
+                        web_placeholder.markdown(f'<div class="web-container">\n{web_text}</div>', unsafe_allow_html=True)
                     elif chunk["section"] == "table":
                         table_text += chunk["content"]
                         table_placeholder.markdown(table_text)
@@ -441,14 +454,30 @@ if st.button("Analyze"):
                 content_placeholder = st.empty()
                 accumulated_text = ""
                 
+                # Add custom CSS for table overflow in single-view mode
+                st.markdown("""
+                    <style>
+                        .stMarkdown {
+                            overflow-x: auto;
+                            max-width: 100%;
+                        }
+                        table {
+                            white-space: nowrap;
+                            display: block;
+                            max-width: -moz-fit-content;
+                            max-width: fit-content;
+                            margin: 0 auto;
+                            overflow-x: auto;
+                        }
+                    </style>
+                """, unsafe_allow_html=True)
+                
                 async for chunk in analyzer.analyze(query, include_web_search=False):
                     accumulated_text += chunk["content"]
                     content_placeholder.markdown(accumulated_text)
             
-            # Clear progress placeholder when done
             progress_placeholder.empty()
         
-        # Run the async function
         asyncio.run(process_stream())
             
     except Exception as e:
