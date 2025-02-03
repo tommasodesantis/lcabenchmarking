@@ -133,47 +133,81 @@ Always include:
 - Data quality indicators
 - Uncertainty ranges where available"""
 
-        self.merger_prompt = """You are an environmental metrics expert tasked with creating a comprehensive comparison table from three sources:
+        self.merger_prompt = """You are an environmental metrics expert tasked with creating a strictly formatted comparison table from three sources:
 1. The user's query (which may contain values to benchmark)
 2. Database results (containing structured LCA metrics)
 3. Web search results (containing broader context and recent information)
 
-Your ONLY task is to create a clear, well-structured comparison table that:
+Your ONLY task is to create a comparison table with the following MANDATORY columns in this exact order:
 
-1. Compares key metrics from all sources:
-   - User's provided values (marked as [USER])
-   - Environmental impact indicators
-   - Carbon footprint values
-   - Process specifications
-   - System boundaries
+| Item/Process | Value (Unit) | Source | Reference | Year | Geography | Method | System Boundary | Uncertainty |
+|-------------|--------------|---------|-----------|------|-----------|---------|----------------|-------------|
 
-2. Includes for each data point:
-   - Value with unit
-   - Response attribution:
-     * [USER] for user-provided values
-     * [WEB] for web search values
-   - Active urls copied from responses, present them as clickable links with the text '[SOURCE]"
-   - Year of data
-   - Geographic scope
-   - Methodology used
+Follow these strict formatting rules for each column:
 
-3. Handles data presentation:
-   - Extract and include any numerical values or metrics from the user's query
-   - Use "N/A" for missing values
-   - Keep original precision of numbers
-   - Include uncertainty ranges when provided
-   - Flag any methodological differences
-   - Note any significant discrepancies between sources
+1. Item/Process:
+   - Clear, specific name of the process or material
+   - Include variant type if applicable (e.g., "Glass Bottle - Recycled")
+   - One item per row, no combining multiple items
 
-Format the table using markdown for clear presentation.
+2. Value (Unit):
+   - Format: "X.XX (unit)" (e.g., "1.23 (kg CO2eq/kg)")
+   - Always round to 2 decimal places
+   - Include unit in parentheses
+   - For multiple indicators, use separate rows
 
-DO NOT:
-- Generate any text before or after the table
-- Include lengthy explanations or analysis
-- Modify or calculate new values
-- Make assumptions about missing data
+3. Source:
+   - Use ONLY: [USER], [DB], or [WEB]
+   - No other variations allowed
 
-Simply create a comprehensive, well-structured table that allows easy comparison of all available metrics from all sources, ensuring the user's values (if any) are included in the comparison."""
+4. Reference:
+   - Format: "[SOURCE](url)"
+   - For DB entries: "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)"
+   - For web entries: "[SOURCE](actual_url)"
+   - User entries: "N/A"
+
+5. Year:
+   - Format: YYYY
+   - Use "N/A" if unknown
+
+6. Geography:
+   - Use ISO country codes when available (e.g., "US", "EU")
+   - Use "GLO" for global
+   - Use "N/A" if unknown
+
+7. Method:
+   - Specify LCA methodology/standard used
+   - Examples: "ISO 14044", "PEF", "EPD"
+   - Use "N/A" if unknown
+
+8. System Boundary:
+   - Use ONLY these terms:
+     * cradle-to-gate
+     * gate-to-gate
+     * cradle-to-grave
+     * cradle-to-cradle
+   - Use "N/A" if unknown
+
+9. Uncertainty:
+   - Format: "±XX%" or "XX-YY (unit)"
+   - Use "N/A" if not provided
+
+Additional Rules:
+1. Create separate rows for:
+   - Different environmental indicators
+   - Process variants
+   - Different sources of same data
+2. Sort rows by:
+   - Item/Process name
+   - Source type (USER > DB > WEB)
+3. Use "N/A" for any missing data, never leave cells empty
+4. No text before or after the table
+5. No explanations or analysis
+6. No data manipulation except rounding to 2 decimals
+7. No combining multiple values in single cells
+
+Example row format:
+| Glass Bottle - Recycled | 1.23 (kg CO2eq/kg) | [DB] | [IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/) | 2025 | EU | PEF | cradle-to-gate | ±15% |"""
 
     def get_chunks(self, query: str, limit: int = 30) -> List[Dict[str, Any]]:
         response = self.client.retrieval.search(
@@ -213,7 +247,7 @@ Simply create a comprehensive, well-structured table that allows easy comparison
         
         # Add provider routing configuration only for meta model
         provider_config = {
-            "order": ["Lepton", "Together", "Avian"],
+            "order": ["Novita", "Hyperbolic", "Lepton", "Together", "Avian"],
             "allow_fallbacks": True
         } if model == "meta-llama/llama-3.3-70b-instruct" else None
 
@@ -411,7 +445,7 @@ if st.button("Analyze"):
                 progress_placeholder.text("Searching database and web, this might take a few minutes...")
                 
                 # Create tabs instead of columns for better space management
-                tabs = st.tabs(["Database Results", "Web Results", "Comparison Table"])
+                tabs = st.tabs(["Database Results", "Web Results", "Results overview"])
                 
                 with tabs[0]:
                     db_placeholder = st.empty()
@@ -447,10 +481,10 @@ if st.button("Analyze"):
                 async for chunk in analyzer.analyze(query, include_web_search=True):
                     if chunk["section"] == "database":
                         db_text += chunk["content"]
-                        db_placeholder.markdown(f'<div class="database-container">\n{db_text}</div>', unsafe_allow_html=True)
+                        db_placeholder.markdown(f'<div class="database-container">\n\n{db_text}</div>', unsafe_allow_html=True)
                     elif chunk["section"] == "web":
                         web_text += chunk["content"]
-                        web_placeholder.markdown(f'<div class="web-container">\n{web_text}</div>', unsafe_allow_html=True)
+                        web_placeholder.markdown(f'<div class="web-container">\n\n{web_text}</div>', unsafe_allow_html=True)
                     elif chunk["section"] == "table":
                         table_text += chunk["content"]
                         table_placeholder.markdown(table_text)
