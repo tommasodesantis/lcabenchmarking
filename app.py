@@ -44,8 +44,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 class LCAAnalyzer:
-    def __init__(self, r2r_api_key: str, openrouter_api_key: str):
+    def __init__(self, r2r_api_key: str, requesty_api_key: str, openrouter_api_key: str):
         self.r2r_api_key = r2r_api_key
+        self.requesty_api_key = requesty_api_key
         self.openrouter_api_key = openrouter_api_key
         self.client = R2RClient("https://api.cloud.sciphi.ai")
         
@@ -234,9 +235,9 @@ Example row format:
 
     async def process_with_llm(self, query: str, context: str, model: str, system_prompt: str, use_streaming: bool = True) -> AsyncGenerator[str, None]:
         headers = {
-            "Authorization": f"Bearer {self.openrouter_api_key}",
+            "Authorization": f"Bearer {self.requesty_api_key}",
             "Content-Type": "application/json",
-            "HTTP-Referer": "http://localhost:8888",
+            "HTTP-Referer": "https://github.com/yourusername/yourrepo",
             "X-Title": "LCA Analysis Tool"
         }
         
@@ -245,12 +246,6 @@ Example row format:
             {"role": "user", "content": f"Query: {query}\n\nContext: {context}"}
         ]
         
-        # Add provider routing configuration only for meta model
-        provider_config = {
-            "order": ["Novita", "Hyperbolic", "Lepton", "Together", "Avian"],
-            "allow_fallbacks": True
-        } if model == "meta-llama/llama-3.3-70b-instruct" else None
-
         payload = {
             "model": model,
             "messages": messages,
@@ -258,9 +253,67 @@ Example row format:
             "stream": use_streaming
         }
 
-        # Only add provider config if it exists
-        if provider_config:
-            payload["provider"] = provider_config
+        async def stream_response():
+            try:
+                async with aiohttp.ClientSession() as session:
+                    async with session.post(
+                        "https://router.requesty.ai/v1/chat/completions",
+                        headers=headers,
+                        json=payload
+                    ) as response:
+                        async for line in response.content:
+                            if line:
+                                content = self.parse_sse_chunk(line)
+                                if content:
+                                    yield content
+            except Exception as e:
+                # Log the error for debugging
+                print(f"Streaming error: {str(e)}")
+                # Fallback to non-streaming
+                response = requests.post(
+                    "https://router.requesty.ai/v1/chat/completions",
+                    headers=headers,
+                    json={**payload, "stream": False}
+                )
+                result = response.json()
+                yield result["choices"][0]["message"]["content"]
+
+        if use_streaming:
+            async for chunk in stream_response():
+                yield chunk
+        else:
+            # Non-streaming mode
+            try:
+                response = requests.post(
+                    "https://router.requesty.ai/v1/chat/completions",
+                    headers=headers,
+                    json={**payload, "stream": False}
+                )
+                result = response.json()
+                yield result["choices"][0]["message"]["content"]
+            except Exception as e:
+                print(f"Non-streaming error: {str(e)}")
+                raise
+
+    async def web_search(self, query: str) -> AsyncGenerator[str, None]:
+        headers = {
+            "Authorization": f"Bearer {self.openrouter_api_key}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "http://localhost:8888",
+            "X-Title": "LCA Analysis Tool"
+        }
+        
+        messages = [
+            {"role": "system", "content": self.web_search_prompt},
+            {"role": "user", "content": f"Query: {query}\n\nContext: Please search the web for relevant LCA and environmental metrics data."}
+        ]
+        
+        payload = {
+            "model": "perplexity/sonar",
+            "messages": messages,
+            "temperature": 0.7,
+            "stream": True
+        }
 
         async def stream_response():
             try:
@@ -276,9 +329,7 @@ Example row format:
                                 if content:
                                     yield content
             except Exception as e:
-                # Log the error for debugging
-                print(f"Streaming error: {str(e)}")
-                # Fallback to non-streaming
+                print(f"Web search streaming error: {str(e)}")
                 response = requests.post(
                     "https://openrouter.ai/api/v1/chat/completions",
                     headers=headers,
@@ -287,31 +338,7 @@ Example row format:
                 result = response.json()
                 yield result["choices"][0]["message"]["content"]
 
-        if use_streaming:
-            async for chunk in stream_response():
-                yield chunk
-        else:
-            # Non-streaming mode
-            try:
-                response = requests.post(
-                    "https://openrouter.ai/api/v1/chat/completions",
-                    headers=headers,
-                    json={**payload, "stream": False}
-                )
-                result = response.json()
-                yield result["choices"][0]["message"]["content"]
-            except Exception as e:
-                print(f"Non-streaming error: {str(e)}")
-                raise
-
-    async def web_search(self, query: str) -> AsyncGenerator[str, None]:
-        async for chunk in self.process_with_llm(
-            query=query,
-            context="Please search the web for relevant LCA and environmental metrics data.",
-            model="perplexity/sonar",
-            system_prompt=self.web_search_prompt,
-            use_streaming=True
-        ):
+        async for chunk in stream_response():
             yield chunk
 
     async def analyze(self, query: str, include_web_search: bool = False) -> AsyncGenerator[Dict[str, str], None]:
@@ -323,7 +350,7 @@ Example row format:
                 db_stream = self.process_with_llm(
                     query=query,
                     context=context,
-                    model="meta-llama/llama-3.3-70b-instruct",
+                    model="deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
                     system_prompt=self.retrieval_prompt,
                     use_streaming=True
                 )
@@ -338,7 +365,7 @@ Example row format:
                 db_stream = self.process_with_llm(
                     query=query,
                     context=context,
-                    model="meta-llama/llama-3.3-70b-instruct",
+                    model="deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
                     system_prompt=self.retrieval_prompt,
                     use_streaming=True
                 )
@@ -357,7 +384,7 @@ Example row format:
                 table_stream = self.process_with_llm(
                     query=query,
                     context=merged_context,
-                    model="meta-llama/llama-3.3-70b-instruct",
+                    model="deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
                     system_prompt=self.merger_prompt,
                     use_streaming=True
                 )
@@ -421,6 +448,7 @@ with st.sidebar:
 def get_analyzer():
     return LCAAnalyzer(
         r2r_api_key=st.secrets["R2R_API_KEY"],
+        requesty_api_key=st.secrets["REQUESTY_API_KEY"],
         openrouter_api_key=st.secrets["OPENROUTER_API_KEY"]
     )
 
