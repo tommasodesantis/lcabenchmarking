@@ -58,6 +58,7 @@ Retrieve and present environmental metrics from the knowledge base with attentio
 Impact indicators available in the retrieved data
 Process variants and specifications
 System boundaries as defined in the source
+If exact requested metrics are not available offer the closest proxy data available specyfing that it is not the exact requested data
 
 Benchmark user data against reference values by:
 
@@ -73,7 +74,7 @@ Transparent documentation of data gaps
 
 When responding:
 
-Present data with full context: process ID, unit, year (if available), country (if available)
+Present data with full context: name item, process ID, unit, year (if available), country (if available)
 Round decimal numerical values to 2 decimal places
 Include environmental indicators found in retrieved chunks
 Don't introduce, overexplain or repeat things, go straight to the point
@@ -89,7 +90,11 @@ Generate a structured markdown comparison table with:
 References must:
 
 Use consistent [1], [2] format
-Use source from retrieved chunk if specified, otherwise default to "IDEMAT 2025" with link https://www.ecocostsvalue.com/data-tools-books/
+Format references based on source type:
+- For IDEMAT: Use "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)" ONLY if IDEMAT is the actual source
+- For DOI numbers: Use the DOI number directly (e.g., "10.1016/j.jclepro.2021.123456")
+- For URLs: Use the URL as a link
+Use ONLY the source specified in the retrieved chunk
 
 Do not:
 
@@ -133,10 +138,10 @@ Always include:
 - Data quality indicators
 - Uncertainty ranges where available"""
 
-        self.merger_prompt = """You are an environmental metrics expert tasked with creating a strictly formatted comparison table from three sources:
-1. The user's query (which may contain values to benchmark)
-2. Database results (containing structured LCA metrics)
-3. Web search results (containing broader context and recent information)
+        self.merger_prompt = """You are an environmental metrics expert tasked with creating a strictly formatted comparison table. Your sources are:
+1. Database results (containing structured LCA metrics)
+2. Web search results (containing broader context and recent information)
+3. User's query (ONLY include if it contains specific values to benchmark)
 
 Your ONLY task is to create a comparison table with the following MANDATORY columns in this exact order:
 
@@ -159,12 +164,16 @@ Follow these strict formatting rules for each column:
 3. Source:
    - Use ONLY: [USER], [DB], or [WEB]
    - No other variations allowed
+   - Only include [USER] if query contains specific values to benchmark
 
 4. Reference:
-                - Format: "[SOURCE](url)"
-                - For DB entries: Use source from chunk if specified, else "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)"
+                - Format varies by source type:
+                - For IDEMAT: "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)" ONLY if IDEMAT is the actual source
+                - For DOI: Use DOI number directly (e.g., "10.1016/j.jclepro.2021.123456")
+                - For URLs: "[SOURCE](actual_url)"
+                - For DB entries: Use ONLY the source specified in the chunk
                 - For web entries: "[SOURCE](actual_url)"
-                - User entries: "N/A"
+                - User entries: "N/A" (only include if user provided values)
 
 5. Year:
    - Format: YYYY
@@ -359,7 +368,7 @@ Example row format:
                 table_stream = self.process_with_llm(
                     query=query,
                     context=merged_context,
-                    model="deepinfra/deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+                    model="deepinfra/meta-llama/Llama-3.3-70B-Instruct",
                     system_prompt=self.merger_prompt,
                     use_streaming=True
                 )
