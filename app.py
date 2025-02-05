@@ -7,6 +7,7 @@ import nest_asyncio
 from typing import List, Dict, Any, Union, AsyncGenerator
 from r2r import R2RClient
 import asyncio
+import openai
 
 # Enable nested asyncio
 nest_asyncio.apply()
@@ -54,43 +55,41 @@ class LCAAnalyzer:
 
 Retrieve and present environmental metrics from the knowledge base with attention to:
 
-Available environmental impact indicators (eco-costs, ReCiPe, EF 3.1)
+Impact indicators available in the retrieved data
 Process variants and specifications
-System boundaries as defined in the database
+System boundaries as defined in the source
 
 Benchmark user data against reference values by:
 
 Selecting ONLY THE MOST RELEVANT comparisons based on product category and specifications
 Focus in particular on different product variants (e.g., packaging types)
-Comparing across multiple environmental indicators
+Comparing across available environmental indicators found in the data
 
 Structure your response with:
 
-Clear data presentation with proper citations [1], [2], etc.
-Comprehensive overview table of relevant metrics
+Clear data presentation in markdown table format
+Citations in [1], [2] format
 Transparent documentation of data gaps
 
 When responding:
 
 Present data with full context: process ID, unit, year (if available), country (if available)
 Round decimal numerical values to 2 decimal places
-Include all available environmental indicators unless asked otherwise
-Don't mention which environmental impact indicators are available, just report those requested by the user or if the query is generic report carbon footprint, total eco-ecost, ReCiPe, EF 3.1
+Include environmental indicators found in retrieved chunks
 Don't introduce, overexplain or repeat things, go straight to the point
 Use appropriate headers to separate sections
 Specify if variants exist for the requested process
 Always cite sources
 
-Generate a structured comparison table with:
+Generate a structured markdown comparison table with:
 
-Clear units of measurement
-Complete set of relevant available indicators
-Process variants when available
+| Item/Process | Value (Unit) | Source | Reference | Year | Geography | Method | System Boundary | Uncertainty |
+|-------------|--------------|---------|-----------|------|-----------|---------|----------------|-------------|
 
 References must:
 
 Use consistent [1], [2] format
-Include database name (default: "IDEMAT 2025" with link https://www.ecocostsvalue.com/data-tools-books/)
+Use source from retrieved chunk if specified, otherwise default to "IDEMAT 2025" with link https://www.ecocostsvalue.com/data-tools-books/
 
 Do not:
 
@@ -162,10 +161,10 @@ Follow these strict formatting rules for each column:
    - No other variations allowed
 
 4. Reference:
-   - Format: "[SOURCE](url)"
-   - For DB entries: "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)"
-   - For web entries: "[SOURCE](actual_url)"
-   - User entries: "N/A"
+                - Format: "[SOURCE](url)"
+                - For DB entries: Use source from chunk if specified, else "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)"
+                - For web entries: "[SOURCE](actual_url)"
+                - User entries: "N/A"
 
 5. Year:
    - Format: YYYY
@@ -210,7 +209,7 @@ Additional Rules:
 Example row format:
 | Glass Bottle - Recycled | 1.23 (kg CO2eq/kg) | [DB] | [IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/) | 2025 | EU | PEF | cradle-to-gate | ±15% |"""
 
-    def get_chunks(self, query: str, limit: int = 30) -> List[Dict[str, Any]]:
+    def get_chunks(self, query: str, limit: int = 20) -> List[Dict[str, Any]]:
         response = self.client.retrieval.search(
             query=query,
             search_settings={
@@ -234,66 +233,42 @@ Example row format:
         return ""
 
     async def process_with_llm(self, query: str, context: str, model: str, system_prompt: str, use_streaming: bool = True) -> AsyncGenerator[str, None]:
-        headers = {
-            "Authorization": f"Bearer {self.requesty_api_key}",
-            "Content-Type": "application/json",
-            "HTTP-Referer": "https://github.com/yourusername/yourrepo",
-            "X-Title": "LCA Analysis Tool"
-        }
+        client = openai.OpenAI(
+            base_url="https://router.requesty.ai/v1",
+            api_key=self.requesty_api_key,
+            default_headers={
+                "HTTP-Referer": "https://github.com/yourusername/yourrepo",
+                "X-Title": "LCA Analysis Tool"
+            }
+        )
         
         messages = [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": f"Query: {query}\n\nContext: {context}"}
         ]
-        
-        payload = {
-            "model": model,
-            "messages": messages,
-            "temperature": 0.7,
-            "stream": use_streaming
-        }
 
-        async def stream_response():
-            try:
-                async with aiohttp.ClientSession() as session:
-                    async with session.post(
-                        "https://router.requesty.ai/v1/chat/completions",
-                        headers=headers,
-                        json=payload
-                    ) as response:
-                        async for line in response.content:
-                            if line:
-                                content = self.parse_sse_chunk(line)
-                                if content:
-                                    yield content
-            except Exception as e:
-                # Log the error for debugging
-                print(f"Streaming error: {str(e)}")
-                # Fallback to non-streaming
-                response = requests.post(
-                    "https://router.requesty.ai/v1/chat/completions",
-                    headers=headers,
-                    json={**payload, "stream": False}
+        try:
+            if use_streaming:
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=messages,
+                    temperature=0.7,
+                    stream=True
                 )
-                result = response.json()
-                yield result["choices"][0]["message"]["content"]
-
-        if use_streaming:
-            async for chunk in stream_response():
-                yield chunk
-        else:
-            # Non-streaming mode
-            try:
-                response = requests.post(
-                    "https://router.requesty.ai/v1/chat/completions",
-                    headers=headers,
-                    json={**payload, "stream": False}
+                for chunk in response:
+                    if chunk.choices[0].delta.content:
+                        yield chunk.choices[0].delta.content
+            else:
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=messages,
+                    temperature=0.7,
+                    stream=False
                 )
-                result = response.json()
-                yield result["choices"][0]["message"]["content"]
-            except Exception as e:
-                print(f"Non-streaming error: {str(e)}")
-                raise
+                yield response.choices[0].message.content
+        except Exception as e:
+            print(f"LLM error: {str(e)}")
+            raise
 
     async def web_search(self, query: str) -> AsyncGenerator[str, None]:
         headers = {
@@ -350,7 +325,7 @@ Example row format:
                 db_stream = self.process_with_llm(
                     query=query,
                     context=context,
-                    model="deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+                    model="cline/o3-mini",
                     system_prompt=self.retrieval_prompt,
                     use_streaming=True
                 )
@@ -365,7 +340,7 @@ Example row format:
                 db_stream = self.process_with_llm(
                     query=query,
                     context=context,
-                    model="deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+                    model="cline/o3-mini",
                     system_prompt=self.retrieval_prompt,
                     use_streaming=True
                 )
@@ -384,7 +359,7 @@ Example row format:
                 table_stream = self.process_with_llm(
                     query=query,
                     context=merged_context,
-                    model="deepinfra/meta-llama/Llama-3.3-70B-Instruct-Turbo",
+                    model="deepinfra/deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
                     system_prompt=self.merger_prompt,
                     use_streaming=True
                 )
