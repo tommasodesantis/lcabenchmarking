@@ -58,7 +58,7 @@ Retrieve and present environmental metrics from the knowledge base with attentio
 Impact indicators available in the retrieved data
 Process variants and specifications
 System boundaries as defined in the source
-If exact requested metrics are not available offer the closest proxy data available specyfing that it is not the exact requested data
+If exact requested metrics are not available offer a few close proxy data available specyfing that it is not the exact requested data
 
 Benchmark user data against reference values by:
 
@@ -145,8 +145,8 @@ Always include:
 
 Your ONLY task is to create a comparison table with the following MANDATORY columns in this exact order:
 
-| Item/Process | Value (Unit) | Source | Reference | Year | Geography | Method | System Boundary | Uncertainty |
-|-------------|--------------|---------|-----------|------|-----------|---------|----------------|-------------|
+| Item/Process | Metrics Description | Value (Unit) | Source | Reference | Year | Geography | Method | System Boundary | Uncertainty |
+|-------------|-------------------|--------------|---------|-----------|------|-----------|---------|----------------|-------------|
 
 Follow these strict formatting rules for each column:
 
@@ -155,18 +155,23 @@ Follow these strict formatting rules for each column:
    - Include variant type if applicable (e.g., "Glass Bottle - Recycled")
    - One item per row, no combining multiple items
 
-2. Value (Unit):
+2. Metrics Description:
+   - Brief 5-8 word description of the metrics being displayed
+   - Focus on what is being measured/compared
+   - Be specific but concise
+
+3. Value (Unit):
    - Format: "X.XX (unit)" (e.g., "1.23 (kg CO2eq/kg)")
    - Always round to 2 decimal places
    - Include unit in parentheses
    - For multiple indicators, use separate rows
 
-3. Source:
+4. Source:
    - Use ONLY: [USER], [DB], or [WEB]
    - No other variations allowed
    - Only include [USER] if query contains specific values to benchmark
 
-4. Reference:
+5. Reference:
                 - Format varies by source type:
                 - For IDEMAT: "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)" ONLY if IDEMAT is the actual source
                 - For DOI: Use DOI number directly (e.g., "10.1016/j.jclepro.2021.123456")
@@ -175,21 +180,21 @@ Follow these strict formatting rules for each column:
                 - For web entries: "[SOURCE](actual_url)"
                 - User entries: "N/A" (only include if user provided values)
 
-5. Year:
+6. Year:
    - Format: YYYY
    - Use "N/A" if unknown
 
-6. Geography:
+7. Geography:
    - Use ISO country codes when available (e.g., "US", "EU")
    - Use "GLO" for global
    - Use "N/A" if unknown
 
-7. Method:
+8. Method:
    - Specify LCA methodology/standard used
    - Examples: "ISO 14044", "PEF", "EPD"
    - Use "N/A" if unknown
 
-8. System Boundary:
+9. System Boundary:
    - Use ONLY these terms:
      * cradle-to-gate
      * gate-to-gate
@@ -197,9 +202,9 @@ Follow these strict formatting rules for each column:
      * cradle-to-cradle
    - Use "N/A" if unknown
 
-9. Uncertainty:
-   - Format: "±XX%" or "XX-YY (unit)"
-   - Use "N/A" if not provided
+10. Uncertainty:
+    - Format: "±XX%" or "XX-YY (unit)"
+    - Use "N/A" if not provided
 
 Additional Rules:
 1. Create separate rows for:
@@ -216,7 +221,7 @@ Additional Rules:
 7. No combining multiple values in single cells
 
 Example row format:
-| Glass Bottle - Recycled | 1.23 (kg CO2eq/kg) | [DB] | [IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/) | 2025 | EU | PEF | cradle-to-gate | ±15% |"""
+| Glass Bottle - Recycled | Total environmental impact assessment | 1.23 (kg CO2eq/kg) | [DB] | [IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/) | 2025 | EU | PEF | cradle-to-gate | ±15% |"""
 
     def get_chunks(self, query: str, limit: int = 20) -> List[Dict[str, Any]]:
         response = self.client.retrieval.search(
