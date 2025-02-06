@@ -380,7 +380,7 @@ Example row format:
                 db_stream = self.process_with_llm(
                     query=query,
                     context=context,
-                    model="google/gemini-2.0-flash-001",
+                    model="cline/o3-mini",
                     system_prompt=self.retrieval_prompt,
                     use_streaming=True
                 )
@@ -395,7 +395,7 @@ Example row format:
                 db_stream = self.process_with_llm(
                     query=query,
                     context=context,
-                    model="google/gemini-2.0-flash-001",
+                    model="cline/o3-mini",
                     system_prompt=self.retrieval_prompt,
                     use_streaming=True
                 )
