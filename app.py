@@ -410,7 +410,7 @@ Example row format:
                     yield {"section": "web", "content": chunk}
                 
                 # Generate comparison table only after web search is complete
-                merged_context = f"""User Query (with values to benchmark):\n{query}\n\nDatabase Results:\n{db_result}\n\nWeb Search Results:\n{web_result}"""
+                merged_context = f"""User Query:\n{query}\n\nDatabase Results:\n{db_result}\n\nWeb Search Results:\n{web_result}"""
                 table_stream = self.process_with_llm(
                     query=query,
                     context=merged_context,
