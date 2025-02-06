@@ -83,7 +83,6 @@ class LCAAnalyzer:
 4. Structure your response with:
 
 Clear data presentation in markdown table format
-Citations in [1], [2] format
 Transparent documentation of data gaps
 
 When responding:
@@ -94,28 +93,35 @@ Include environmental indicators found in retrieved chunks
 Don't introduce, overexplain or repeat things, go straight to the point
 Use appropriate headers to separate sections
 Specify if variants exist for the requested item
-Always cite sources
 
 Generate a structured markdown comparison table with:
 
-| Item/Process | Value (Unit) | Source | Reference | Year | Geography | Method | System Boundary | Uncertainty |
-|-------------|--------------|---------|-----------|------|-----------|---------|----------------|-------------|
+| Item/Process | Value (Unit) | Reference | Year | Geography | Method | System Boundary | Uncertainty | Explanation | Match Rating |
+|-------------|--------------|-----------|------|-----------|---------|----------------|-------------|-------------|--------------|
 
-References must:
+Follow these rules:
 
-Use consistent [1], [2] format
-Format references based on source type:
-- For IDEMAT: Use "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)" ONLY if IDEMAT is the actual source
-- For DOI numbers: Use the DOI number directly and always add the "https://doi.org/" at the beginning (e.g., "https://doi.org/10.1016/j.jclepro.2021.123456")
-- For URLs: Use the URL as a link
-Use ONLY the source specified in the retrieved chunk
+1. Reference formatting:
+   - Use format: [SHORT_NAME](url) where SHORT_NAME is a brief identifier
+   - For DOI numbers: Use [DOI_SHORT_NAME](https://doi.org/number)
+   - Example: [ECO2023](https://example.com/data)
+
+2. Explanation column:
+   - Provide a very brief rationale (1-2 lines) for data selection
+   - For proxy data, explain why it's a suitable substitute
+   - Focus on relevance to user's query
+
+3. Match Rating:
+   - Use ONLY these values:
+     * "Very good" - Exact match or nearly identical
+     * "Good" - Similar process/material with minor differences
+     * "Poor" - Proxy data with significant differences
 
 Do not:
-
-Perform calculations or manipulate raw data, with the exception of rounding figures to 2 decimal places
-Provide random data that are not closely related to the user query
-Make assumptions without explicit documentation
-Mix incompatible methodologies without clear warning"""
+- Perform calculations or manipulate raw data, with the exception of rounding figures to 2 decimal places
+- Provide random data that are not closely related to the user query
+- Make assumptions without explicit documentation
+- Mix incompatible methodologies without clear warning"""
 
         self.web_search_prompt = """You are an environmental metrics expert conducting web-based LCA research. Focus on:
 
@@ -169,8 +175,8 @@ Your tasks in EXACT order:
 2. COMPARISON TABLE (Required):
    Create a table with these MANDATORY columns in this exact order:
 
-| Item/Process | Metrics Description | Value (Unit) | Source | Reference | Year | Geography | Method | System Boundary | Uncertainty |
-|-------------|-------------------|--------------|---------|-----------|------|-----------|---------|----------------|-------------|
+| Item/Process | Metrics Description | Value (Unit) | Source | Reference | Year | Geography | Method | System Boundary | Uncertainty | Explanation | Match Rating |
+|-------------|-------------------|--------------|---------|-----------|------|-----------|---------|----------------|-------------|-------------|--------------|
 
 Follow these strict formatting rules for each column:
 
@@ -196,13 +202,10 @@ Follow these strict formatting rules for each column:
    - Only include [USER] if query contains specific values to benchmark
 
 5. Reference:
-                - Format varies by source type:
-                - For IDEMAT: "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)" ONLY if IDEMAT is the actual source
-                - For DOI: Use DOI number directly (e.g., "10.1016/j.jclepro.2021.123456")
-                - For URLs: "[SOURCE](actual_url)"
-                - For DB entries: Use ONLY the source specified in the chunk
-                - For web entries: "[SOURCE](actual_url)"
-                - User entries: "N/A" (only include if user provided values)
+   - Format: [SHORT_NAME](url)
+   - For DOI: [DOI_SHORT_NAME](https://doi.org/number)
+   - For web entries: [SOURCE_NAME](actual_url)
+   - User entries: "N/A" (only if user provided values)
 
 6. Year:
    - Format: YYYY
@@ -230,6 +233,17 @@ Follow these strict formatting rules for each column:
     - Format: "±XX%" or "XX-YY (unit)"
     - Use "N/A" if not provided
 
+11. Explanation:
+    - Brief rationale for data selection (1-2 lines)
+    - For proxy data, explain why it's suitable
+    - Focus on relevance to query
+
+12. Match Rating:
+    - Use ONLY these values:
+      * "Very good" - Exact match or nearly identical
+      * "Good" - Similar process/material with minor differences
+      * "Poor" - Proxy data with significant differences
+
 Additional Rules:
 1. Create separate rows for:
    - Different environmental indicators
@@ -245,7 +259,7 @@ Additional Rules:
 7. No combining multiple values in single cells
 
 Example row format:
-| Glass Bottle - Recycled | Total environmental impact assessment | 1.23 (kg CO2eq/kg) | [DB] | [IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/) | 2025 | EU | PEF | cradle-to-gate | ±15% |"""
+| Glass Bottle - Recycled | Total environmental impact | 1.23 (kg CO2eq/kg) | [DB] | [ECO2023](https://example.com/data) | 2023 | EU | PEF | cradle-to-gate | ±15% | Primary data from glass recycling facility | Very good |"""
 
     def get_chunks(self, query: str, limit: int = 20) -> List[Dict[str, Any]]:
         response = self.client.retrieval.search(
@@ -290,7 +304,8 @@ Example row format:
                 response = client.chat.completions.create(
                     model=model,
                     messages=messages,
-                    temperature=0.7,
+                    temperature=0,
+                    top_p=0,
                     stream=True
                 )
                 for chunk in response:
@@ -300,7 +315,8 @@ Example row format:
                 response = client.chat.completions.create(
                     model=model,
                     messages=messages,
-                    temperature=0.7,
+                    temperature=0,
+                    top_p=0,
                     stream=False
                 )
                 yield response.choices[0].message.content
@@ -324,7 +340,8 @@ Example row format:
         payload = {
             "model": "perplexity/sonar-reasoning",
             "messages": messages,
-            "temperature": 0.7,
+            "temperature": 0,
+            "top_p": 0,
             "stream": True
         }
 
