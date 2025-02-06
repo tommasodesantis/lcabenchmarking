@@ -51,22 +51,36 @@ class LCAAnalyzer:
         self.openrouter_api_key = openrouter_api_key
         self.client = R2RClient("https://api.cloud.sciphi.ai")
         
-        self.retrieval_prompt = """You are an environmental metrics expert focused on precise retrieval and benchmarking of LCA data. Your purpose is to:
+        self.retrieval_prompt = """You are an environmental metrics expert focused on precise retrieval of LCA data. Your purpose is to:
 
-Retrieve and present environmental metrics from the knowledge base with attention to:
+1. DETERMINE IF BENCHMARKING IS NEEDED:
+   - Only perform benchmarking if the user explicitly requests it by:
+     * Using words like "benchmark", "compare", "how does it compare"
+     * Providing specific values to compare against
+     * Asking for performance relative to industry standards
+   - Otherwise, focus solely on data retrieval and presentation
 
-Impact indicators available in the retrieved data
-Process variants and specifications
-System boundaries as defined in the source
-If exact requested metrics are not available offer a few close proxy data available specyfing that it is not the exact requested data
+2. FOR DATA RETRIEVAL (Always):
+   - Present ONLY the most relevant environmental metrics by:
+     * Prioritizing exact matches for the queried item/process
+     * If exact match not available, limit to maximum FIVE related items that:
+       - Share similar production processes
+       - Belong to the same product/material category
+       - Have comparable functional properties
+   - Exclude data points that are:
+     * Only tangentially related
+     * From fundamentally different product categories
+     * Not sharing similar production methods or use cases
 
-Benchmark user data against reference values by:
+3. FOR BENCHMARKING (Only when explicitly requested):
+   - Select comparisons based on relevance hierarchy:
+     1. Primary relevance: Same product/material category
+     2. Secondary relevance: Similar production process
+     3. Tertiary relevance: Similar application/use case
+   - Do not include comparisons beyond these relevance levels
+   - Compare only across compatible environmental indicators
 
-Selecting ONLY THE MOST RELEVANT comparisons based on product category and specifications
-Focus in particular on different product variants (e.g., packaging types)
-Comparing across available environmental indicators found in the data
-
-Structure your response with:
+4. Structure your response with:
 
 Clear data presentation in markdown table format
 Citations in [1], [2] format
@@ -74,12 +88,12 @@ Transparent documentation of data gaps
 
 When responding:
 
-Present data with full context: name item, process ID, unit, year (if available), country (if available)
-Round decimal numerical values to 2 decimal places
+Present data with full context: name item, process ID (if available), unit, year (if available), country (if available)
+Round decimal numerical values to 3 decimal places
 Include environmental indicators found in retrieved chunks
 Don't introduce, overexplain or repeat things, go straight to the point
 Use appropriate headers to separate sections
-Specify if variants exist for the requested process
+Specify if variants exist for the requested item
 Always cite sources
 
 Generate a structured markdown comparison table with:
@@ -92,13 +106,14 @@ References must:
 Use consistent [1], [2] format
 Format references based on source type:
 - For IDEMAT: Use "[IDEMAT 2025](https://www.ecocostsvalue.com/data-tools-books/)" ONLY if IDEMAT is the actual source
-- For DOI numbers: Use the DOI number directly (e.g., "10.1016/j.jclepro.2021.123456")
+- For DOI numbers: Use the DOI number directly and always add the "https://doi.org/" at the beginning (e.g., "https://doi.org/10.1016/j.jclepro.2021.123456")
 - For URLs: Use the URL as a link
 Use ONLY the source specified in the retrieved chunk
 
 Do not:
 
 Perform calculations or manipulate raw data, with the exception of rounding figures to 2 decimal places
+Provide random data that are not closely related to the user query
 Make assumptions without explicit documentation
 Mix incompatible methodologies without clear warning"""
 
@@ -138,12 +153,21 @@ Always include:
 - Data quality indicators
 - Uncertainty ranges where available"""
 
-        self.merger_prompt = """You are an environmental metrics expert tasked with creating a strictly formatted comparison table. Your sources are:
+        self.merger_prompt = """You are an environmental metrics expert tasked with providing a synthesis and creating a strictly formatted comparison table. Your sources are:
 1. Database results (containing structured LCA metrics)
 2. Web search results (containing broader context and recent information)
 3. User's query (ONLY include if it contains specific values to benchmark)
 
-Your ONLY task is to create a comparison table with the following MANDATORY columns in this exact order:
+Your tasks in EXACT order:
+
+1. SYNTHESIS (Required):
+   - Provide a clear, concise (2-3 sentences max) answer to the user's query
+   - Focus on the most relevant findings from both database and web sources
+   - It should serve as a TL;DR for the user
+   - End with a line break before the table
+
+2. COMPARISON TABLE (Required):
+   Create a table with these MANDATORY columns in this exact order:
 
 | Item/Process | Metrics Description | Value (Unit) | Source | Reference | Year | Geography | Method | System Boundary | Uncertainty |
 |-------------|-------------------|--------------|---------|-----------|------|-----------|---------|----------------|-------------|
@@ -161,7 +185,7 @@ Follow these strict formatting rules for each column:
    - Be specific but concise
 
 3. Value (Unit):
-   - Format: "X.XX (unit)" (e.g., "1.23 (kg CO2eq/kg)")
+   - Format: "X.XXX (unit)" (e.g., "1.234 (kg CO2eq/kg)")
    - Always round to 2 decimal places
    - Include unit in parentheses
    - For multiple indicators, use separate rows
@@ -298,7 +322,7 @@ Example row format:
         ]
         
         payload = {
-            "model": "perplexity/sonar",
+            "model": "perplexity/sonar-reasoning",
             "messages": messages,
             "temperature": 0.7,
             "stream": True
@@ -339,7 +363,7 @@ Example row format:
                 db_stream = self.process_with_llm(
                     query=query,
                     context=context,
-                    model="cline/o3-mini",
+                    model="google/gemini-2.0-flash-001",
                     system_prompt=self.retrieval_prompt,
                     use_streaming=True
                 )
@@ -354,7 +378,7 @@ Example row format:
                 db_stream = self.process_with_llm(
                     query=query,
                     context=context,
-                    model="cline/o3-mini",
+                    model="google/gemini-2.0-flash-001",
                     system_prompt=self.retrieval_prompt,
                     use_streaming=True
                 )
@@ -373,7 +397,7 @@ Example row format:
                 table_stream = self.process_with_llm(
                     query=query,
                     context=merged_context,
-                    model="deepinfra/meta-llama/Llama-3.3-70B-Instruct",
+                    model="google/gemini-2.0-flash-001",
                     system_prompt=self.merger_prompt,
                     use_streaming=True
                 )
@@ -412,7 +436,7 @@ if not st.session_state.authenticated:
     st.stop()
 
 # Main app content (only shown when authenticated)
-st.title("LCA Benchmarking Analysis")
+st.title("LCA Benchmarking and Retrieval")
 
 # Add logout button to sidebar
 with st.sidebar:
@@ -422,11 +446,11 @@ with st.sidebar:
 
     st.header("About")
     st.markdown("""
-    This tool helps retrieve and benchmark environmental metrics using AI connected to an LCA database (currently only Idemat).
+    This tool helps retrieve and benchmark environmental metrics using AI connected to a life-cycle assessment (LCA) database (currently only Idemat) and the web.
 
     I'm working on expanding the database to include as many LCA data as possible from published studies. 
                 
-    My mission is to help LCA professionals to benchmark their results instantly and accurately.
+    My mission: mitigating uncertainty and filling data gaps in LCA.
     
     ---
     Developed by [Tommaso De Santis](https://www.linkedin.com/in/tommaso-de-santis/)
