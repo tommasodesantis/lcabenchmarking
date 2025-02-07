@@ -63,7 +63,7 @@ class LCAAnalyzer:
 2. FOR DATA RETRIEVAL (Always):
    - Present ONLY the most relevant environmental metrics by:
      * Prioritizing exact matches for the queried item/process
-     * For chemicals without exact matches, select proxies based on:
+     * For chemicals without exact matches, try to always offer at least one proxy based on:
        1. Chemical similarity hierarchy:
           - Same chemical group (e.g., esters, amines)
           - Similar molecular structure (presence of benzene rings, double bonds)
@@ -171,7 +171,8 @@ Do not:
    - Standardization bodies (ISO, EN, ASTM)
 
    Present ONLY the most relevant environmental metrics by:
-   - For chemicals without exact matches, select proxies based on:
+   - Prioritizing exact matches for the queried item/process
+   - For chemicals without exact matches, try to always offer at least one proxy based on:
      1. Chemical similarity hierarchy:
         - Same chemical group (e.g., esters, amines)
         - Similar molecular structure (benzene rings, double bonds)
@@ -232,10 +233,9 @@ Follow these strict formatting rules:
    - Include unit in parentheses
    - Example: "1.86 (kg CO2eq/kg)"
 
-4. Reference formatting:
+4. Reference:
+   - Reference MUST be the url where data was sourced
    - Use format: [SHORT_NAME](url) where SHORT_NAME is a brief, meaningful identifier
-   - For DOI numbers: Use [DOI_SHORT_NAME](https://doi.org/number)
-   - Example: [ECO2023](https://example.com/data)
 
 5. Explanation column MUST include for chemical proxies:
    - Chemical similarity aspects (functional groups, structure)
@@ -254,6 +254,7 @@ Follow these strict formatting rules:
      * "Poor" - Different material/chemical/process group but estimated similar production intensity
 
 Do not:
+- Add citations like [1], [2] without explaining them in a dedicated reference section
 - Perform calculations or manipulate raw data, with the exception of rounding figures to 2 decimal places
 - Provide random data that are not closely related to the user query
 - Make assumptions without explicit documentation
