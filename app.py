@@ -211,8 +211,8 @@ Do not:
 
 Generate a structured markdown table with these EXACT columns in this order:
 
-| Item/Process | Value (Unit) | Reference | Year | Geography | Method | System Boundary | Uncertainty | Explanation | Match Rating |
-|-------------|--------------|-----------|------|-----------|---------|----------------|-------------|-------------|--------------|
+| Item/Process | Metrics Description | Value (Unit) | Reference | Year | Geography | Method | System Boundary | Uncertainty | Explanation | Match Rating |
+|--------------|-------------------|--------------|-----------|------|------------|---------|----------------|-------------|-------------|--------------|
 
 Follow these strict formatting rules:
 
@@ -233,7 +233,7 @@ Follow these strict formatting rules:
    - Example: "1.86 (kg CO2eq/kg)"
 
 4. Reference formatting:
-   - Use format: [SHORT_NAME](url) where SHORT_NAME is a brief identifier
+   - Use format: [SHORT_NAME](url) where SHORT_NAME is a brief, meaningful identifier
    - For DOI numbers: Use [DOI_SHORT_NAME](https://doi.org/number)
    - Example: [ECO2023](https://example.com/data)
 
