@@ -112,7 +112,7 @@ Follow these strict formatting rules:
 
 1. Item/Process:
    - Clear, specific name of material/process
-   - Clearly state in bold if it is a proxy 
+   - If it is a proxy, use the format "**Proxy:** [Name]"
    - Never combine multiple items in one cell
 
 2. Metrics Description:
@@ -217,8 +217,8 @@ Generate a structured markdown table with these EXACT columns in this order:
 Follow these strict formatting rules:
 
 1. Item/Process:
-   - Clear, specific name of material/process
-   - Clearly state in bold if it is a proxy 
+   - Clear, specific name of item/process
+   - If it is a proxy, use the format "**Proxy:** [Name of proxy item/process]"
    - Never combine multiple items in one cell
 
 2. Metrics Description:
@@ -283,8 +283,8 @@ Your tasks in EXACT order:
 Follow these strict formatting rules for each column:
 
 1. Item/Process:
-   - Clear, specific name of process or material
-   - Include variant type if applicable (e.g., "Bio-based", "Petroleum-based")
+   - Clear, specific name of item/process
+   - If it is a proxy, use the format "**Proxy:** [Name of proxy item/process]"
    - Never combine multiple items in one cell
 
 2. Metrics Description:
