@@ -87,6 +87,7 @@ Follow these strict formatting rules:
    - Process similarity justification
    - Material property comparison
    - Application relevance
+   * If multiple rows are related to the same proxy, use the same explanation for all
 
 6. Match Rating:
    - Use ONLY these values:
@@ -165,12 +166,13 @@ Generate a structured markdown table with these EXACT columns in this order:
 Follow these strict formatting rules:
 
 1. Item/Process:
-   - Clear, specific name of item/process
+   - Clear, specific name of item/process that is being measured
+   - It should be unambiguous
    - If it is a proxy, use the format "**Proxy:** [Name of proxy item/process]"
    - Never combine multiple items in one cell
 
 2. Metrics Description:
-   - Specific environmental indicator being measured
+   - Specific environmental indicator
    - One indicator per row
    - Example: "Global Warming Potential", "Primary Energy Demand"
 
@@ -182,7 +184,7 @@ Follow these strict formatting rules:
 
 4. Reference:
    - Reference MUST be the url where data was sourced
-   - Use format: [SHORT_NAME](url) where SHORT_NAME is a brief, meaningful identifier
+   - Use format: [SHORT_NAME](url) where SHORT_NAME is a brief, meaningful identifier and not a number
 
 5. Explanation column MUST include for chemical proxies:
    - Chemical similarity aspects (functional groups, structure)
@@ -201,7 +203,7 @@ Follow these strict formatting rules:
      * "Poor" - Different material/chemical/process group but estimated similar production intensity
 
 Do not:
-- Add citations like [1], [2] without explaining them in a dedicated reference section
+- Add citations like [1], [2], even outside the table. Always use meaningful identifiers
 - Perform calculations or manipulate raw data, with the exception of rounding figures to 2 decimal places
 - Provide random data that are not closely related to the user query
 - Make assumptions without explicit documentation
