@@ -18,13 +18,32 @@ class LCAAnalyzer:
         self.merger_prompt = MERGER_PROMPT
 
     def get_chunks(self, query: str, limit: int = 20) -> List[Dict[str, Any]]:
-        response = self.client.retrieval.search(
-            query=query,
-            search_settings={
-                "limit": limit
-            }
-        )
-        return response["results"]["chunk_search_results"]
+        try:
+            response = self.client.retrieval.search(
+                query=query,
+                search_settings={
+                    "limit": limit
+                }
+            )
+            
+            # Access the chunk_search_results through the results attribute
+            chunks = response.results.chunk_search_results
+            
+            # Convert chunks to list of dictionaries for consistent usage
+            formatted_chunks = []
+            for chunk in chunks:
+                formatted_chunk = {
+                    "text": chunk.text,
+                    "score": chunk.score,
+                    "metadata": chunk.metadata
+                }
+                formatted_chunks.append(formatted_chunk)
+                
+            return formatted_chunks
+            
+        except Exception as e:
+            logging.error(f"Error in get_chunks: {str(e)}")
+            raise
 
     def parse_sse_chunk(self, chunk: bytes) -> str:
         """Parse a chunk of SSE data and extract the content."""
