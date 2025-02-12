@@ -88,7 +88,7 @@ def main():
 
         st.header("About")
         st.markdown("""
-        This tool helps retrieve and benchmark environmental metrics using AI connected to a life-cycle assessment (LCA) database (currently only Idemat) and the web.
+        This tool helps retrieve and benchmark environmental metrics using AI connected to a life-cycle assessment (LCA) database (e.g. Idemat, Agribalyse, etc) and the web.
 
         I'm working on expanding the database to include as many LCA data as possible from published studies. 
                     
@@ -173,7 +173,7 @@ def main():
                             table_text += chunk["content"]
                             table_placeholder.markdown(table_text)
                 else:
-                    st.markdown("### Analysis Results")
+                    st.markdown("### Results from database")
                     content_placeholder = st.empty()
                     accumulated_text = ""
                     
