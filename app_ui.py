@@ -102,6 +102,8 @@ def main():
     include_web_search = st.toggle('Include web search', value=False, 
         help='Enable to search both database and web sources. The analysis might take up to a few minutes.')
 
+    st.info("💡 Tip: For better results, avoid using abbreviations for chemical compounds and item names. For example, use 'sodium chloride' instead of 'NaCl', and 'polyethylene terephthalate' instead of 'PET'.")
+    
     query = st.text_area(
         "Enter your environmental metrics query:", 
         "My honey in a glass has a carbon footprint of 1 kg CO2eq/kg, how does it benchmark?", 
