@@ -3,6 +3,11 @@ import streamlit as st
 import nest_asyncio
 import asyncio
 from analyzer import LCAAnalyzer
+from dotenv import load_dotenv
+from auth import Authenticator
+
+# Load environment variables
+load_dotenv()
 
 # Enable nested asyncio
 nest_asyncio.apply()
@@ -12,6 +17,15 @@ st.set_page_config(
     page_title="LCA Benchmarking Tool",
     page_icon="🌍",
     layout="wide"
+)
+
+# Initialize authenticator
+allowed_users = os.getenv("ALLOWED_USERS", "").split(",")
+authenticator = Authenticator(
+    allowed_users=allowed_users,
+    token_key=os.getenv("TOKEN_KEY"),
+    secret_path="client_secret.json",
+    redirect_uri="http://localhost:8501",
 )
 
 # Add custom CSS
@@ -39,18 +53,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Initialize session state for authentication
-if 'authenticated' not in st.session_state:
-    st.session_state.authenticated = False
-
-def authenticate(username, password):
-    usernames = st.secrets.usernames
-    passwords = st.secrets.passwords
-    if username in usernames:
-        idx = usernames.index(username)
-        return password == passwords[idx]
-    return False
-
 # Initialize the analyzer
 @st.cache_resource
 def get_analyzer():
@@ -61,20 +63,15 @@ def get_analyzer():
     )
 
 def main():
-    # Login form
-    if not st.session_state.authenticated:
+    # Check authentication and handle OAuth flow
+    authenticator.check_auth()
+
+    # Login form if not authenticated
+    if not st.session_state.connected:
         left_col, center_col, right_col = st.columns([1,2,1])
-        
         with center_col:
             st.title("🌱 Welcome to LCA Benchmarker")
-            username = st.text_input("Username")
-            password = st.text_input("Password", type="password")
-            if st.button("Login", use_container_width=True):
-                if authenticate(username, password):
-                    st.session_state.authenticated = True
-                    st.rerun()
-                else:
-                    st.error("Invalid username or password")
+            authenticator.login()
         st.stop()
 
     # Main app content (only shown when authenticated)
@@ -83,7 +80,7 @@ def main():
     # Add logout button to sidebar
     with st.sidebar:
         if st.button("Logout"):
-            st.session_state.authenticated = False
+            authenticator.logout()
             st.rerun()
 
         st.header("About")
