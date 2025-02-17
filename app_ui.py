@@ -5,6 +5,35 @@ import asyncio
 from analyzer import LCAAnalyzer
 from dotenv import load_dotenv
 from auth import Authenticator
+import logging
+
+# Set up logging
+logger = logging.getLogger('app_ui')
+logger.setLevel(logging.DEBUG)
+
+# Create logs directory if it doesn't exist
+if not os.path.exists('logs'):
+    os.makedirs('logs')
+
+# Create file handler
+file_handler = logging.FileHandler('logs/app.log')
+file_handler.setLevel(logging.DEBUG)
+
+# Create console handler
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.DEBUG)
+
+# Create formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+console_handler.setFormatter(formatter)
+
+# Add handlers to logger
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
+
+# Prevent log propagation to root logger to avoid duplicate messages
+logger.propagate = False
 
 # Load environment variables
 load_dotenv()
@@ -63,25 +92,32 @@ def get_analyzer():
     )
 
 def main():
+    logger.debug("Starting main application")
     # Check authentication and handle OAuth flow
+    logger.debug("Checking authentication status")
     authenticator.check_auth()
 
     # Login form if not authenticated
     if not st.session_state.connected:
+        logger.debug("User not authenticated, showing login form")
         left_col, center_col, right_col = st.columns([1,2,1])
         with center_col:
             st.title("🌱 Welcome to LCA Benchmarker")
             authenticator.login()
+        logger.debug("Stopping execution at login screen")
         st.stop()
 
     # Main app content (only shown when authenticated)
+    logger.debug("User authenticated, showing main content")
     st.title("LCA Benchmarking and Retrieval")
 
     # Add logout button to sidebar
     with st.sidebar:
         if st.button("Logout"):
+            logger.debug("Logout button clicked")
             authenticator.logout()
-            st.rerun()
+            logger.debug("Stopping execution after logout")
+            st.stop()  # Stop execution immediately to show login screen
 
         st.header("About")
         st.markdown("""

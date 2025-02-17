@@ -1,0 +1,1139 @@
+2025-02-17 16:55:10,247 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:10,249 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:55:10,250 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:55:10,250 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:55:11,141 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:11,142 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:11,142 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:11,143 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:11,266 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:11,275 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:11,276 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:11,276 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:11,280 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:16,600 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:16,617 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:16,618 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:16,619 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:16,622 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:19,898 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:19,921 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:19,921 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:19,921 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:19,923 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:19,987 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:20,003 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:20,003 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:20,004 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:20,006 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:20,484 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:20,486 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:55:20,487 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:55:20,488 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:55:20,505 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:20,506 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:20,507 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:20,509 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:21,033 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 16:55:21,034 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 16:55:21,035 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 16:55:21,036 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 16:55:21,037 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 16:55:21,039 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 16:55:21.036785
+2025-02-17 16:55:21,042 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 16:55:21,169 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:21,187 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:21,188 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 16:55:21,392 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:21,401 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:21,402 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 16:55:23,920 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:23,921 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:55:23,922 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:55:23,922 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:55:23,933 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:23,933 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:23,934 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:23,935 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:24,055 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:24,065 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:24,065 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:24,066 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:24,067 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:50,752 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:50,755 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:50,756 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:50,757 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:55:50,759 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:55:50,760 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:55:50,762 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:55:50,765 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:55:50,766 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:55:50,767 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:55:50,768 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:55:50,768 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:55:52,234 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:52,236 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:52,237 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:52,238 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:52,240 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:52,245 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:52,246 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:52,248 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:52,252 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:52,253 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:52,253 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:52,254 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:52,361 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:52,373 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:52,376 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:52,376 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:52,378 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:52,504 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:52,515 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:52,516 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:52,517 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:52,518 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:52,589 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:52,603 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:52,604 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:52,604 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:52,606 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:56,427 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:56,442 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:56,445 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:56,446 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:56,448 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:59,638 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:59,662 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:59,663 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:59,664 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:59,666 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:55:59,747 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:55:59,760 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:55:59,761 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:55:59,762 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:55:59,763 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:56:00,771 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 16:56:00,771 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 16:56:00,772 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 16:56:00,773 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 16:56:00,773 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 16:56:00,774 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 16:56:00.772257
+2025-02-17 16:56:00,775 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 16:56:00,850 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:56:00,859 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:56:00,859 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 16:56:03,731 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:56:03,732 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:56:03,732 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:56:03,733 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:56:03,746 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:56:03,747 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:56:03,747 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:56:03,748 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:56:03,828 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:56:03,846 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:56:03,848 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:56:03,850 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:56:03,852 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:15,543 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:15,544 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:15,544 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:15,552 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:58:15,645 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:58:15,646 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:58:15,647 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:58:15,647 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:58:15,648 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:58:15,649 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:58:15,649 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:58:15,650 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:58:17,017 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:17,018 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:17,020 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:17,021 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:17,022 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:17,039 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:17,039 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:17,050 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:17,053 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:17,054 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:17,054 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:17,065 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:17,339 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:17,359 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:17,386 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:17,388 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:17,390 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:17,649 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:17,656 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:17,656 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:17,657 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:17,658 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:17,663 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:17,671 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:17,672 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:17,672 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:17,673 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:21,334 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:21,350 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:21,352 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:21,352 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:21,354 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:26,318 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:26,318 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:26,321 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:58:26,321 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:58:26,327 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:58:26,327 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:58:26,328 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:58:26,328 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:58:26,339 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:26,339 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:26,340 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:26,340 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:26,340 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:26,340 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:26,341 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:26,341 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:26,460 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:26,460 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:26,467 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:26,467 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:26,468 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:26,468 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:26,468 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:26,468 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:26,470 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:26,470 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:27,503 - auth.authenticate - DEBUG - Processing OAuth callback
+2025-02-17 16:58:27,503 - auth.authenticate - DEBUG - Processing OAuth callback
+2025-02-17 16:58:27,645 - auth.authenticate - DEBUG - OAuth token fetched successfully
+2025-02-17 16:58:27,645 - auth.authenticate - DEBUG - OAuth token fetched successfully
+2025-02-17 16:58:30,497 - auth.authenticate - DEBUG - Retrieved user info for email: tds.desa@gmail.com
+2025-02-17 16:58:30,497 - auth.authenticate - DEBUG - Retrieved user info for email: tds.desa@gmail.com
+2025-02-17 16:58:30,498 - auth.authenticate - INFO - Authorizing OAuth user: tds.desa@gmail.com
+2025-02-17 16:58:30,498 - auth.authenticate - INFO - Authorizing OAuth user: tds.desa@gmail.com
+2025-02-17 16:58:30,499 - auth.token_manager - DEBUG - Setting token for email: tds.desa@gmail.com
+2025-02-17 16:58:30,499 - auth.token_manager - DEBUG - Setting token for email: tds.desa@gmail.com
+2025-02-17 16:58:30,499 - auth.token_manager - DEBUG - Encoding token for email: tds.desa@gmail.com
+2025-02-17 16:58:30,499 - auth.token_manager - DEBUG - Encoding token for email: tds.desa@gmail.com
+2025-02-17 16:58:30,500 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 16:58:30,500 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 16:58:30,500 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 16:58:30.499196
+2025-02-17 16:58:30,500 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 16:58:30.499196
+2025-02-17 16:58:30,502 - auth.token_manager - INFO - Token successfully set in cookie for tds.desa@gmail.com
+2025-02-17 16:58:30,502 - auth.token_manager - INFO - Token successfully set in cookie for tds.desa@gmail.com
+2025-02-17 16:58:31,594 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:31,594 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:31,607 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:31,607 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:31,608 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 16:58:31,608 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 16:58:35,328 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:35,328 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:35,330 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:58:35,330 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 16:58:35,332 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:58:35,332 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 16:58:35,333 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:58:35,333 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 16:58:35,357 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:35,357 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:35,358 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:35,358 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:35,359 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:35,359 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:35,361 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:35,361 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 16:58:35,463 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:35,463 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:35,487 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:35,487 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:35,488 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:35,488 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 16:58:35,489 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:35,489 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 16:58:35,492 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 16:58:35,492 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 16:58:35,493 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 16:58:35,493 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 16:58:35,495 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 16:58:35,495 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 16:58:35,496 - auth.authenticate - INFO - Valid token found for user: tds.desa@gmail.com
+2025-02-17 16:58:35,496 - auth.authenticate - INFO - Valid token found for user: tds.desa@gmail.com
+2025-02-17 16:58:35,643 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:35,643 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 16:58:35,673 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:35,673 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 16:58:35,674 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 16:58:35,674 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:01:26,397 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:26,397 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:26,416 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:26,416 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:26,417 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:01:26,417 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:01:26,439 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:01:26,439 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:01:26,440 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:01:26,440 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:01:26,441 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:01:26,441 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:01:26,443 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:01:26,443 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:01:26,724 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:26,724 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:26,744 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:26,744 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:26,744 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:26,744 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:26,887 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:26,887 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:26,895 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:26,895 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:26,895 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:26,895 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:31,791 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:31,791 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:31,819 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:31,819 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:31,820 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:31,820 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:46,263 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:46,263 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:46,291 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:46,291 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:46,292 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:46,292 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:46,413 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:46,413 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:46,440 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:46,440 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:46,441 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:46,441 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:01:46,464 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:01:46,464 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:01:46,466 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:01:46,466 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:01:46,468 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:01:46,468 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:01:46,469 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:01:46,469 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:01:46,470 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:01:46,470 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:01:46,472 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:01:46.469238
+2025-02-17 17:01:46,472 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:01:46.469238
+2025-02-17 17:01:46,475 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:01:46,475 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:01:46,552 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:46,552 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:46,567 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:46,567 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:46,567 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:01:46,567 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:01:49,826 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:49,826 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:49,827 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:01:49,827 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:01:49,828 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:01:49,828 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:01:49,828 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:01:49,828 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:01:49,844 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:49,844 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:49,845 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:01:49,845 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:01:49,845 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:01:49,845 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:01:49,846 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:01:49,846 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:01:50,159 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:50,159 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:50,195 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:50,195 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:50,197 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:01:50,197 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:01:50,197 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:01:50,197 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:01:50,199 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:01:50,199 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:01:55,251 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:55,251 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:01:55,303 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:55,303 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:01:55,304 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:01:55,304 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:01:55,305 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:01:55,305 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:01:55,317 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:01:55,317 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:00,920 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:00,920 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:00,964 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:00,964 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:00,970 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:00,970 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:00,970 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:00,970 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:00,971 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:00,971 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:01,002 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:01,002 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:01,074 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:01,074 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:01,075 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:01,075 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:01,076 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:01,076 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:01,077 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:01,077 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:02,105 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:02:02,105 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:02:02,107 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:02:02,107 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:02:02,108 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:02:02,108 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:02:02,110 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:02:02,110 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:02:02,111 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:02:02,111 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:02:02,112 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:02:02.110162
+2025-02-17 17:02:02,112 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:02:02.110162
+2025-02-17 17:02:02,114 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:02:02,114 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:02:02,213 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:02,213 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:02,268 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:02,268 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:02,269 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:02:02,269 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:02:09,171 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:09,171 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:09,172 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:02:09,172 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:02:09,173 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:02:09,173 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:02:09,173 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:02:09,173 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:02:09,193 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:09,193 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:09,193 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:09,193 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:09,194 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:09,194 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:09,195 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:09,195 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:09,416 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:09,416 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:09,436 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:09,436 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:09,436 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:09,436 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:09,437 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:09,437 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:09,437 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:09,437 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:11,845 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:11,845 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:11,892 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:11,892 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:11,893 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:11,893 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:11,894 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:11,894 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:11,896 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:11,896 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:26,756 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:26,756 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:26,757 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:02:26,757 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:02:26,758 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:02:26,758 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:02:26,759 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:02:26,759 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:02:26,781 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:26,781 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:26,781 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:26,781 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:26,782 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:26,782 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:26,783 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:26,783 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:27,130 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:27,130 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:27,153 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:27,153 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:27,154 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:27,154 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:02:27,154 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:27,154 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:02:27,155 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:27,155 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:02:28,157 - auth.authenticate - DEBUG - Processing OAuth callback
+2025-02-17 17:02:28,157 - auth.authenticate - DEBUG - Processing OAuth callback
+2025-02-17 17:02:28,263 - auth.authenticate - DEBUG - OAuth token fetched successfully
+2025-02-17 17:02:28,263 - auth.authenticate - DEBUG - OAuth token fetched successfully
+2025-02-17 17:02:28,638 - auth.authenticate - DEBUG - Retrieved user info for email: tds.desa@gmail.com
+2025-02-17 17:02:28,638 - auth.authenticate - DEBUG - Retrieved user info for email: tds.desa@gmail.com
+2025-02-17 17:02:28,638 - auth.authenticate - INFO - Authorizing OAuth user: tds.desa@gmail.com
+2025-02-17 17:02:28,638 - auth.authenticate - INFO - Authorizing OAuth user: tds.desa@gmail.com
+2025-02-17 17:02:28,639 - auth.token_manager - DEBUG - Setting token for email: tds.desa@gmail.com
+2025-02-17 17:02:28,639 - auth.token_manager - DEBUG - Setting token for email: tds.desa@gmail.com
+2025-02-17 17:02:28,640 - auth.token_manager - DEBUG - Encoding token for email: tds.desa@gmail.com
+2025-02-17 17:02:28,640 - auth.token_manager - DEBUG - Encoding token for email: tds.desa@gmail.com
+2025-02-17 17:02:28,640 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:02:28,640 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:02:28,641 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:02:28.640558
+2025-02-17 17:02:28,641 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:02:28.640558
+2025-02-17 17:02:28,643 - auth.token_manager - INFO - Token successfully set in cookie for tds.desa@gmail.com
+2025-02-17 17:02:28,643 - auth.token_manager - INFO - Token successfully set in cookie for tds.desa@gmail.com
+2025-02-17 17:02:29,259 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:29,259 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:02:29,278 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:29,278 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:02:29,279 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:02:29,279 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:03:06,086 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:06,086 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:06,087 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:03:06,087 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:03:06,088 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:03:06,088 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:03:06,089 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:03:06,089 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:03:06,119 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:06,119 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:06,120 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:03:06,120 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:03:06,121 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:03:06,121 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:03:06,122 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:03:06,122 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:03:06,415 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:06,415 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:06,434 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:06,434 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:06,435 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:03:06,435 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:03:06,435 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:03:06,435 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:03:06,436 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:03:06,436 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:03:06,437 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:03:06,437 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:03:06,438 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:03:06,438 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:03:06,438 - auth.authenticate - INFO - Valid token found for user: tds.desa@gmail.com
+2025-02-17 17:03:06,438 - auth.authenticate - INFO - Valid token found for user: tds.desa@gmail.com
+2025-02-17 17:03:06,514 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:06,514 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:06,542 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:06,542 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:06,542 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:03:06,542 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:03:07,802 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:07,802 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:07,850 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:07,850 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:07,851 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:03:07,851 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:03:07,890 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:03:07,890 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:03:07,890 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:03:07,890 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:03:07,891 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:03:07,891 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:03:07,892 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:03:07,892 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:03:08,247 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:08,247 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:08,293 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:08,293 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:08,294 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:08,294 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:08,456 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:08,456 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:08,481 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:08,481 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:08,481 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:08,481 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:11,325 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:11,325 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:11,411 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:11,411 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:11,412 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:11,412 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:14,704 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:14,704 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:14,757 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:14,757 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:14,758 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:14,758 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:14,818 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:14,818 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:14,986 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:14,986 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:14,987 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:14,987 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:03:15,002 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:03:15,002 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:03:15,003 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:03:15,003 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:03:15,003 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:03:15,003 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:03:15,004 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:03:15,004 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:03:15,005 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:03:15,005 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:03:15,005 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:03:15.004536
+2025-02-17 17:03:15,005 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:03:15.004536
+2025-02-17 17:03:15,007 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:03:15,007 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:03:15,096 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:15,096 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:03:15,149 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:15,149 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:03:15,149 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:03:15,149 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:07:31,849 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:31,849 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:31,849 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:31,850 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:07:31,851 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:07:31,851 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:07:31,852 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:07:31,852 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:07:31,852 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:07:31,853 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:07:31,853 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:07:31,854 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:07:32,421 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:32,422 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:32,423 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:32,424 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:32,425 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:32,426 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:07:32,427 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:32,429 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:07:32,430 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:32,431 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:32,431 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:32,432 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:07:36,000 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:36,004 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:36,005 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:36,005 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:36,006 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:07:39,867 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:39,879 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:39,880 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:39,881 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:39,883 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:07:44,220 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:44,235 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:44,236 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:44,237 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:44,239 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:07:44,317 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:44,329 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:44,330 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:44,330 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:44,332 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:07:45,369 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:07:45,371 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:07:45,372 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:07:45,374 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:07:45,376 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:07:45,377 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:07:45.374432
+2025-02-17 17:07:45,382 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:07:45,485 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:45,502 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:45,503 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:07:45,694 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:45,705 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:45,706 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:07:56,558 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:56,559 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:07:56,559 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:07:56,560 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:07:56,571 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:56,571 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:56,572 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:56,573 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:07:56,824 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:56,834 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:56,834 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:56,835 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:56,836 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:07:56,837 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:07:56,837 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:07:56,838 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 17:07:56,921 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:56,932 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:56,932 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:07:59,341 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:59,342 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:07:59,342 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:07:59,343 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:07:59,353 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:59,353 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:59,353 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:59,354 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:07:59,588 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:59,600 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:59,600 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:07:59,600 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:07:59,601 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:07:59,602 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:07:59,602 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:07:59,603 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 17:07:59,693 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:07:59,710 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:07:59,711 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:04,272 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:04,317 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:04,319 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:04,351 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:08:04,352 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:08:04,353 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:08:04,354 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:08:04,617 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:04,661 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:04,663 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:04,914 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:04,950 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:04,950 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:10,841 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:10,874 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:10,875 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:15,342 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:15,342 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:15,342 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:15,343 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:15,343 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:15,343 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:15,344 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:15,344 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:15,344 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:15,345 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:15,345 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:15,345 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:15,374 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:15,374 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:15,374 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:15,374 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:15,374 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:15,374 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:15,375 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:15,375 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:15,375 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:15,377 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:15,377 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:15,377 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:15,505 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:15,505 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:15,505 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:15,522 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:15,522 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:15,522 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:15,523 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:15,523 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:15,523 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:15,523 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:15,523 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:15,523 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:15,524 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:15,524 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:15,524 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:16,526 - auth.authenticate - DEBUG - Processing OAuth callback
+2025-02-17 17:08:16,526 - auth.authenticate - DEBUG - Processing OAuth callback
+2025-02-17 17:08:16,526 - auth.authenticate - DEBUG - Processing OAuth callback
+2025-02-17 17:08:16,652 - auth.authenticate - DEBUG - OAuth token fetched successfully
+2025-02-17 17:08:16,652 - auth.authenticate - DEBUG - OAuth token fetched successfully
+2025-02-17 17:08:16,652 - auth.authenticate - DEBUG - OAuth token fetched successfully
+2025-02-17 17:08:21,475 - auth.authenticate - DEBUG - Retrieved user info for email: tds.desa@gmail.com
+2025-02-17 17:08:21,475 - auth.authenticate - DEBUG - Retrieved user info for email: tds.desa@gmail.com
+2025-02-17 17:08:21,475 - auth.authenticate - DEBUG - Retrieved user info for email: tds.desa@gmail.com
+2025-02-17 17:08:21,476 - auth.authenticate - INFO - Authorizing OAuth user: tds.desa@gmail.com
+2025-02-17 17:08:21,476 - auth.authenticate - INFO - Authorizing OAuth user: tds.desa@gmail.com
+2025-02-17 17:08:21,476 - auth.authenticate - INFO - Authorizing OAuth user: tds.desa@gmail.com
+2025-02-17 17:08:21,477 - auth.token_manager - DEBUG - Setting token for email: tds.desa@gmail.com
+2025-02-17 17:08:21,477 - auth.token_manager - DEBUG - Setting token for email: tds.desa@gmail.com
+2025-02-17 17:08:21,477 - auth.token_manager - DEBUG - Setting token for email: tds.desa@gmail.com
+2025-02-17 17:08:21,478 - auth.token_manager - DEBUG - Encoding token for email: tds.desa@gmail.com
+2025-02-17 17:08:21,478 - auth.token_manager - DEBUG - Encoding token for email: tds.desa@gmail.com
+2025-02-17 17:08:21,478 - auth.token_manager - DEBUG - Encoding token for email: tds.desa@gmail.com
+2025-02-17 17:08:21,479 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:08:21,479 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:08:21,479 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:08:21,480 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:08:21.478082
+2025-02-17 17:08:21,480 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:08:21.478082
+2025-02-17 17:08:21,480 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:08:21.478082
+2025-02-17 17:08:21,484 - auth.token_manager - INFO - Token successfully set in cookie for tds.desa@gmail.com
+2025-02-17 17:08:21,484 - auth.token_manager - INFO - Token successfully set in cookie for tds.desa@gmail.com
+2025-02-17 17:08:21,484 - auth.token_manager - INFO - Token successfully set in cookie for tds.desa@gmail.com
+2025-02-17 17:08:21,924 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:21,924 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:21,924 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:21,951 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:21,951 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:21,951 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:21,952 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:21,952 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:21,952 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:26,039 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:26,039 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:26,039 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:26,040 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:26,040 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:26,040 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:26,041 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:26,041 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:26,041 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:26,043 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:26,043 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:26,043 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:26,079 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:26,079 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:26,079 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:26,079 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:26,079 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:26,079 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:26,080 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:26,080 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:26,080 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:26,081 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:26,081 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:26,081 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:26,134 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:26,134 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:26,134 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:26,188 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:26,188 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:26,188 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:26,188 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:26,188 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:26,188 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:26,189 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:26,189 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:26,189 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:26,190 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:08:26,190 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:08:26,190 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:08:26,192 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:26,192 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:26,192 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:26,192 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:26,192 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:26,192 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:26,193 - auth.authenticate - INFO - Valid token found for user: tds.desa@gmail.com
+2025-02-17 17:08:26,193 - auth.authenticate - INFO - Valid token found for user: tds.desa@gmail.com
+2025-02-17 17:08:26,193 - auth.authenticate - INFO - Valid token found for user: tds.desa@gmail.com
+2025-02-17 17:08:26,269 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:26,269 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:26,269 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:26,337 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:26,337 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:26,337 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:26,339 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:26,339 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:26,339 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:28,498 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:28,498 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:28,498 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:28,546 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:28,546 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:28,546 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:28,547 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:28,547 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:28,547 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:28,596 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:08:28,596 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:08:28,596 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:08:28,598 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:08:28,598 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:08:28,598 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:08:28,599 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:08:28,599 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:08:28,599 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:08:28,602 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:08:28,602 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:08:28,602 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:08:28,780 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:28,780 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:28,780 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:28,844 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:28,844 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:28,844 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:28,846 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:28,846 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:28,846 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:29,012 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:29,012 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:29,012 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:29,061 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:29,061 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:29,061 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:29,063 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:29,063 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:29,063 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:31,336 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:31,336 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:31,336 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:31,337 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:31,337 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:31,337 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:31,340 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:31,340 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:31,340 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:31,342 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:31,342 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:31,342 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:31,431 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:31,431 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:31,431 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:31,433 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:31,433 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:31,433 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:31,436 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:31,436 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:31,436 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:31,438 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:31,438 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:31,438 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:31,481 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:31,481 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:31,481 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:31,544 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:31,544 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:31,544 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:31,546 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:31,546 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:31,546 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:31,547 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:31,547 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:31,547 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:31,549 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:31,549 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:31,549 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:35,775 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:35,775 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:35,775 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:35,860 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:35,860 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:35,860 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:35,862 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:35,862 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:35,862 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:35,863 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:35,863 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:35,863 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:35,865 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:35,865 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:35,865 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:39,056 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:39,056 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:39,056 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:39,128 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:39,128 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:39,128 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:39,129 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:39,129 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:39,129 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:39,129 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:39,129 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:39,129 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:39,130 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:39,130 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:39,130 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:39,162 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:39,162 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:39,162 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:39,296 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:39,296 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:39,296 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:39,297 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:39,297 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:39,297 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:39,297 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:39,297 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:39,297 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:39,298 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:39,298 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:39,298 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:40,332 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:08:40,332 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:08:40,332 - auth.authenticate - DEBUG - Attempting password authentication for user: admin
+2025-02-17 17:08:40,337 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:08:40,337 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:08:40,337 - auth.authenticate - INFO - Password authentication successful for user: admin
+2025-02-17 17:08:40,341 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:08:40,341 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:08:40,341 - auth.token_manager - DEBUG - Setting token for email: admin
+2025-02-17 17:08:40,341 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:08:40,341 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:08:40,341 - auth.token_manager - DEBUG - Encoding token for email: admin
+2025-02-17 17:08:40,342 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:08:40,342 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:08:40,342 - auth.token_manager - DEBUG - Token successfully encoded
+2025-02-17 17:08:40,343 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:08:40.341986
+2025-02-17 17:08:40,343 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:08:40.341986
+2025-02-17 17:08:40,343 - auth.token_manager - DEBUG - Token expiration set to: 2025-02-18 17:08:40.341986
+2025-02-17 17:08:40,345 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:08:40,345 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:08:40,345 - auth.token_manager - INFO - Token successfully set in cookie for admin
+2025-02-17 17:08:40,398 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:40,398 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:40,398 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:40,437 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:40,437 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:40,437 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:40,438 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:40,438 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:40,438 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:40,526 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:40,526 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:40,526 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:40,552 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:40,552 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:40,552 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:40,552 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:40,552 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:40,552 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:42,228 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:42,228 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:42,228 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:42,230 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:42,230 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:42,230 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:08:42,231 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:42,231 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:42,231 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:08:42,232 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:42,232 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:42,232 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:08:42,277 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:42,277 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:42,277 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:42,278 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:42,278 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:42,278 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:42,279 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:42,279 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:42,279 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:42,281 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:42,281 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:42,281 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:08:42,316 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:42,316 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:42,316 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:42,373 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:42,373 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:42,373 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:42,374 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:42,374 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:42,374 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:08:42,375 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:42,375 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:42,375 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:08:42,377 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:08:42,377 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:08:42,377 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 17:08:42,378 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:42,378 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:42,378 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:42,380 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:42,380 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:42,380 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 17:08:42,380 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 17:08:42,380 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 17:08:42,380 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 17:08:42,475 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:42,475 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:42,475 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:42,563 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:42,563 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:42,563 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:42,564 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:42,564 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:42,564 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:45,140 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:45,140 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:45,140 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:45,228 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:45,228 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:45,228 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:45,230 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:45,230 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:45,230 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 17:08:45,303 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:08:45,303 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:08:45,303 - auth.authenticate - DEBUG - Processing logout request
+2025-02-17 17:08:45,304 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:08:45,304 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:08:45,304 - auth.token_manager - DEBUG - Attempting to delete token from cookie: auth_jwt
+2025-02-17 17:08:45,305 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:08:45,305 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:08:45,305 - auth.token_manager - INFO - Token successfully deleted from cookie
+2025-02-17 17:08:45,307 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:08:45,307 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:08:45,307 - auth.authenticate - INFO - User successfully logged out
+2025-02-17 17:08:45,478 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:45,478 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:45,478 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:45,555 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:45,555 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:45,555 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:45,556 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:45,556 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:45,556 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:45,761 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:45,761 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:45,761 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:08:45,831 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:45,831 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:45,831 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:08:45,833 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:45,833 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:08:45,833 - auth.authenticate - DEBUG - User is logged out
+2025-02-17 17:09:11,543 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:09:11,543 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:09:11,543 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:09:11,545 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:09:11,545 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:09:11,545 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 17:09:11,547 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:09:11,547 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:09:11,547 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 17:09:11,549 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:09:11,549 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:09:11,549 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 17:09:11,612 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:09:11,612 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:09:11,612 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:09:11,612 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:09:11,612 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:09:11,612 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:09:11,614 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:09:11,614 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:09:11,614 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:09:11,615 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:09:11,615 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:09:11,615 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:09:11,645 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:09:11,645 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:09:11,645 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 17:09:11,704 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:09:11,704 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:09:11,704 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 17:09:11,705 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:09:11,705 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:09:11,705 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 17:09:11,706 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:09:11,706 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:09:11,706 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 17:09:11,707 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:09:11,707 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 17:09:11,707 - auth.token_manager - INFO - No token found in cookie
