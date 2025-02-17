@@ -24,8 +24,8 @@ allowed_users = os.getenv("ALLOWED_USERS", "").split(",")
 authenticator = Authenticator(
     allowed_users=allowed_users,
     token_key=os.getenv("TOKEN_KEY"),
-    secret_path="client_secret.json",
-    redirect_uri="http://localhost:8501",
+    secret_path="client_secret_879574062090-6k6vhd2s5qj1gc71mgqdhi2hc0rgjnkq.apps.googleusercontent.com.json",
+    redirect_uri="http://localhost:8501/",
 )
 
 # Add custom CSS
