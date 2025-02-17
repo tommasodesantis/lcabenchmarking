@@ -5,6 +5,7 @@ import asyncio
 from analyzer import LCAAnalyzer
 from dotenv import load_dotenv
 from auth import Authenticator
+from auth.credits import CreditsManager
 import logging
 
 # Set up logging
@@ -48,7 +49,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# Initialize authenticator
+# Initialize authenticator and credits manager
 allowed_users = os.getenv("ALLOWED_USERS", "").split(",")
 authenticator = Authenticator(
     allowed_users=allowed_users,
@@ -56,6 +57,7 @@ authenticator = Authenticator(
     secret_path="client_secret_879574062090-6k6vhd2s5qj1gc71mgqdhi2hc0rgjnkq.apps.googleusercontent.com.json",
     redirect_uri="http://localhost:8501/",
 )
+credits_manager = CreditsManager()
 
 # Add custom CSS
 st.markdown("""
@@ -111,13 +113,17 @@ def main():
     logger.debug("User authenticated, showing main content")
     st.title("LCA Benchmarking and Retrieval")
 
-    # Add logout button to sidebar
+    # Add logout button and credits display to sidebar
     with st.sidebar:
         if st.button("Logout"):
             logger.debug("Logout button clicked")
             authenticator.logout()
             logger.debug("Stopping execution after logout")
             st.stop()  # Stop execution immediately to show login screen
+
+        # Display remaining credits
+        remaining_credits = credits_manager.get_credits(st.session_state.user_info["email"])
+        st.metric("Remaining Free Credits", remaining_credits)
 
         st.header("About")
         st.markdown("""
@@ -144,6 +150,12 @@ def main():
     )
 
     if st.button("Analyze"):
+        # Check if user has credits available
+        user_email = st.session_state.user_info["email"]
+        if not credits_manager.use_credit(user_email):
+            st.error("You have used all your free credits. Please contact the administrator for more credits.")
+            st.stop()
+
         analyzer = get_analyzer()
         
         try:

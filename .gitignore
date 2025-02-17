@@ -3,3 +3,4 @@ __pycache__/
 *$py.class
 .env
 .streamlit/secrets.toml
+client_secret_*.json
