@@ -1878,3 +1878,59 @@
 2025-02-18 23:19:06,722 - auth.authenticate - DEBUG - User is already authenticated
 2025-02-18 23:19:06,763 - auth.credits - DEBUG - Getting credits for user: tds.desa@gmail.com
 2025-02-18 23:19:06,763 - auth.credits - DEBUG - Getting credits for user: tds.desa@gmail.com
+2025-02-18 23:21:36,123 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:21:36,123 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:21:36,190 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:21:36,190 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:21:37,432 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:21:37,432 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:21:37,560 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:21:37,560 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:21:37,601 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-18 23:21:37,601 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-18 23:21:37,602 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-18 23:21:37,602 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-18 23:21:37,615 - auth.credits - DEBUG - Getting credits for user: tds.desa@gmail.com
+2025-02-18 23:21:37,615 - auth.credits - DEBUG - Getting credits for user: tds.desa@gmail.com
+2025-02-18 23:21:37,676 - auth.credits - DEBUG - Attempting to use credit for user: tds.desa@gmail.com
+2025-02-18 23:21:37,676 - auth.credits - DEBUG - Attempting to use credit for user: tds.desa@gmail.com
+2025-02-18 23:21:37,790 - auth.credits - INFO - Successfully used credit for tds.desa@gmail.com. 2 remaining
+2025-02-18 23:21:37,790 - auth.credits - INFO - Successfully used credit for tds.desa@gmail.com. 2 remaining
+2025-02-18 23:23:17,662 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:23:17,662 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:23:17,663 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-18 23:23:17,663 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-18 23:23:17,663 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-18 23:23:17,663 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-18 23:23:17,664 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-18 23:23:17,664 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-18 23:23:17,763 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:23:17,763 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:23:18,711 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:23:18,711 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:23:18,927 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:23:18,927 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:23:18,978 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-18 23:23:18,978 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-18 23:23:18,979 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-18 23:23:18,979 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-18 23:23:18,980 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-18 23:23:18,980 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-18 23:23:18,982 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-18 23:23:18,982 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-18 23:23:18,983 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-18 23:23:18,983 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-18 23:23:18,984 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-18 23:23:18,984 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-18 23:23:18,985 - auth.authenticate - INFO - Valid token found for user: tds.desa@gmail.com
+2025-02-18 23:23:18,985 - auth.authenticate - INFO - Valid token found for user: tds.desa@gmail.com
+2025-02-18 23:23:19,074 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:23:19,074 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-18 23:23:19,969 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:23:19,969 - auth.credits - INFO - Credits table exists in Supabase
+2025-02-18 23:23:20,037 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-18 23:23:20,037 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-18 23:23:20,039 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-18 23:23:20,039 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-18 23:23:20,058 - auth.credits - DEBUG - Getting credits for user: tds.desa@gmail.com
+2025-02-18 23:23:20,058 - auth.credits - DEBUG - Getting credits for user: tds.desa@gmail.com
