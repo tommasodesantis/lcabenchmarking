@@ -130,7 +130,7 @@ def main():
 
         # Display remaining credits
         remaining_credits = credits_manager.get_credits(st.session_state.user_info["email"])
-        st.metric("Remaining Free Credits", remaining_credits)
+        st.metric("Remaining free credits:", remaining_credits)
 
         st.header("About")
         st.markdown("""
