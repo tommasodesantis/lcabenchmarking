@@ -1316,3 +1316,181 @@
 2025-02-17 17:46:56,992 - auth.authenticate - DEBUG - Checking authentication status
 2025-02-17 17:46:56,993 - auth.authenticate - DEBUG - User is already authenticated
 2025-02-17 17:46:57,002 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 21:53:47,618 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:53:47,619 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 21:53:47,620 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 21:53:47,620 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 21:53:49,315 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:53:49,330 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:53:49,336 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:53:49,337 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 21:53:49,338 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 21:53:49,341 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 21:53:49,458 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:53:49,461 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:53:49,465 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:53:49,477 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:53:49,478 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 21:53:49,479 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 21:53:49,483 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 21:53:49,484 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 21:53:49,486 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 21:53:49,487 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 21:53:49,586 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:53:49,588 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:53:49,592 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:53:49,600 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:53:49,600 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 21:53:49,606 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 21:54:23,275 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:54:23,280 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:54:23,282 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:54:23,477 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:54:23,577 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:54:23,579 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:54:23,581 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:54:23,595 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:54:23,598 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 21:54:23,603 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 21:54:23,610 - auth.credits - DEBUG - Attempting to use credit for user: admin
+2025-02-17 21:54:23,624 - auth.credits - INFO - Successfully used credit for admin. 2 remaining
+2025-02-17 21:56:01,871 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:56:01,874 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 21:56:01,875 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 21:56:01,876 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 21:56:01,879 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:56:01,885 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:56:01,913 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:56:01,914 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 21:56:01,915 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 21:56:01,917 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 21:56:02,033 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:56:02,035 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:56:02,038 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:56:02,067 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:56:02,068 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 21:56:02,069 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 21:56:02,071 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 21:56:02,072 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 21:56:02,073 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 21:56:02,074 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 21:56:02,170 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:56:02,172 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:56:02,174 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:56:02,189 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:56:02,190 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 21:56:02,199 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 21:56:28,543 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:56:28,547 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:56:28,550 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:56:28,651 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 21:56:28,655 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 21:56:28,660 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 21:56:28,670 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:56:28,788 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 21:56:28,789 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 21:56:28,803 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 21:56:28,822 - auth.credits - DEBUG - Attempting to use credit for user: admin
+2025-02-17 21:56:28,841 - auth.credits - INFO - Successfully used credit for admin. 1 remaining
+2025-02-17 22:11:19,955 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:11:19,955 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 22:11:19,956 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 22:11:19,956 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 22:11:19,959 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:11:19,962 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:11:19,975 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:11:19,976 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 22:11:19,977 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 22:11:19,978 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 22:11:19,979 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 22:11:19,979 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 22:11:19,980 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 22:11:20,062 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:11:20,063 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:11:20,064 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:11:20,074 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:11:20,075 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 22:11:20,081 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 22:11:29,265 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:11:29,268 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:11:29,270 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:11:29,313 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:11:29,318 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 22:11:29,328 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 22:11:29,339 - auth.credits - DEBUG - Attempting to use credit for user: admin
+2025-02-17 22:11:29,355 - auth.credits - INFO - Successfully used credit for admin. 0 remaining
+2025-02-17 22:12:53,273 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:12:53,276 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:12:53,280 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:12:53,397 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:12:53,398 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 22:12:53,532 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 22:12:53,558 - auth.credits - DEBUG - Attempting to use credit for user: admin
+2025-02-17 22:12:53,560 - auth.credits - WARNING - No credits remaining for user: admin
+2025-02-17 22:12:58,229 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:12:58,233 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:12:58,235 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:12:58,268 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:12:58,268 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 22:12:58,280 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 22:12:58,298 - auth.credits - DEBUG - Attempting to use credit for user: admin
+2025-02-17 22:12:58,301 - auth.credits - WARNING - No credits remaining for user: admin
+2025-02-17 22:13:01,113 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:13:01,116 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 22:13:01,118 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 22:13:01,118 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 22:13:01,121 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:13:01,131 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:13:01,197 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:13:01,199 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 22:13:01,199 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 22:13:01,201 - auth.token_manager - INFO - No token found in cookie
+2025-02-17 22:13:01,262 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:13:01,264 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:13:01,266 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:13:01,292 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:13:01,294 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 22:13:01,295 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 22:13:01,296 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 22:13:01,297 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 22:13:01,297 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 22:13:01,298 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 22:13:01,392 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:13:01,395 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:13:01,397 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:13:01,427 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:13:01,428 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 22:13:01,448 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 22:13:04,205 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:13:04,211 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:13:04,213 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:13:04,321 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:13:04,321 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 22:13:04,343 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 22:13:04,354 - auth.credits - DEBUG - Attempting to use credit for user: admin
+2025-02-17 22:13:04,357 - auth.credits - WARNING - No credits remaining for user: admin
+2025-02-17 22:14:48,565 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 22:14:48,567 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 22:14:48,568 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 22:14:48,577 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 22:14:48,578 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 22:14:48,584 - auth.credits - DEBUG - Getting credits for user: admin
+2025-02-17 23:18:11,135 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 23:18:11,138 - auth.authenticate - DEBUG - Initializing auth_method in session state
+2025-02-17 23:18:11,140 - auth.authenticate - DEBUG - Initializing connected state in session state
+2025-02-17 23:18:11,141 - auth.authenticate - DEBUG - Initializing user_info in session state
+2025-02-17 23:18:11,148 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 23:18:11,156 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 23:18:11,182 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 23:18:11,183 - auth.authenticate - DEBUG - Checking for existing token
+2025-02-17 23:18:11,184 - auth.token_manager - DEBUG - Attempting to get token from cookie: auth_jwt
+2025-02-17 23:18:11,185 - auth.token_manager - DEBUG - Token found in cookie, attempting to decode
+2025-02-17 23:18:11,188 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 23:18:11,189 - auth.token_manager - DEBUG - Token successfully decoded
+2025-02-17 23:18:11,189 - auth.authenticate - INFO - Valid token found for user: admin
+2025-02-17 23:18:11,428 - auth.authenticate - DEBUG - Initializing Authenticator
+2025-02-17 23:18:11,429 - auth.credits - DEBUG - Initializing credits database at auth/credits.db
+2025-02-17 23:18:11,430 - auth.credits - INFO - Credits database initialized successfully
+2025-02-17 23:18:11,454 - auth.authenticate - DEBUG - Checking authentication status
+2025-02-17 23:18:11,455 - auth.authenticate - DEBUG - User is already authenticated
+2025-02-17 23:18:11,468 - auth.credits - DEBUG - Getting credits for user: admin

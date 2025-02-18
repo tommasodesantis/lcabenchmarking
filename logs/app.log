@@ -12773,3 +12773,669 @@
 2025-02-17 17:46:56,994 - app_ui - DEBUG - User authenticated, showing main content
 2025-02-17 17:46:56,994 - app_ui - DEBUG - User authenticated, showing main content
 2025-02-17 17:46:56,994 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:53:49,333 - app_ui - DEBUG - Starting main application
+2025-02-17 21:53:49,334 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:53:49,471 - app_ui - DEBUG - Starting main application
+2025-02-17 21:53:49,471 - app_ui - DEBUG - Starting main application
+2025-02-17 21:53:49,473 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:53:49,473 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:53:49,594 - app_ui - DEBUG - Starting main application
+2025-02-17 21:53:49,594 - app_ui - DEBUG - Starting main application
+2025-02-17 21:53:49,594 - app_ui - DEBUG - Starting main application
+2025-02-17 21:53:49,597 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:53:49,597 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:53:49,597 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:53:49,602 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:53:49,602 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:53:49,602 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:54:23,285 - app_ui - DEBUG - Starting main application
+2025-02-17 21:54:23,285 - app_ui - DEBUG - Starting main application
+2025-02-17 21:54:23,285 - app_ui - DEBUG - Starting main application
+2025-02-17 21:54:23,285 - app_ui - DEBUG - Starting main application
+2025-02-17 21:54:23,299 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:54:23,299 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:54:23,299 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:54:23,299 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:54:23,583 - app_ui - DEBUG - Starting main application
+2025-02-17 21:54:23,583 - app_ui - DEBUG - Starting main application
+2025-02-17 21:54:23,583 - app_ui - DEBUG - Starting main application
+2025-02-17 21:54:23,583 - app_ui - DEBUG - Starting main application
+2025-02-17 21:54:23,583 - app_ui - DEBUG - Starting main application
+2025-02-17 21:54:23,588 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:54:23,588 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:54:23,588 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:54:23,588 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:54:23,588 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:54:23,599 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:54:23,599 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:54:23,599 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:54:23,599 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:54:23,599 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:01,893 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:01,893 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:01,893 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:01,893 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:01,893 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:01,893 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:01,902 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:01,902 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:01,902 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:01,902 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:01,902 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:01,902 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,040 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,040 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,040 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,040 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,040 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,040 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,040 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,056 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,056 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,056 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,056 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,056 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,056 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,056 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,177 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,177 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,177 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,177 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,177 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,177 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,177 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,177 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:02,183 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,183 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,183 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,183 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,183 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,183 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,183 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,183 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:02,192 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:02,192 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:02,192 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:02,192 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:02,192 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:02,192 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:02,192 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:02,192 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,553 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,553 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,553 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,553 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,553 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,553 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,553 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,553 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,553 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,636 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,665 - app_ui - DEBUG - Starting main application
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,778 - app_ui - DEBUG - Checking authentication status
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 21:56:28,792 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,963 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:19,972 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,066 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,070 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:20,075 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,273 - app_ui - DEBUG - Starting main application
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,302 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:11:29,319 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,286 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,308 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:53,487 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,238 - app_ui - DEBUG - Starting main application
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,260 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:12:58,269 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,138 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,165 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,270 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,282 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,400 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,414 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:01,431 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,216 - app_ui - DEBUG - Starting main application
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,267 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:13:04,324 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,568 - app_ui - DEBUG - Starting main application
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,573 - app_ui - DEBUG - Checking authentication status
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 22:14:48,579 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,161 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,174 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,433 - app_ui - DEBUG - Starting main application
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,442 - app_ui - DEBUG - Checking authentication status
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
+2025-02-17 23:18:11,456 - app_ui - DEBUG - User authenticated, showing main content
