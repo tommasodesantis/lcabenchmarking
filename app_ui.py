@@ -57,7 +57,14 @@ authenticator = Authenticator(
     secret_path="client_secret_879574062090-6k6vhd2s5qj1gc71mgqdhi2hc0rgjnkq.apps.googleusercontent.com.json",
     redirect_uri="http://localhost:8501/",
 )
-credits_manager = CreditsManager()
+
+# Initialize credits manager (now using Supabase)
+try:
+    credits_manager = CreditsManager()
+    logger.info("Successfully initialized Supabase credits manager")
+except Exception as e:
+    logger.error(f"Failed to initialize Supabase credits manager: {str(e)}")
+    raise
 
 # Add custom CSS
 st.markdown("""
