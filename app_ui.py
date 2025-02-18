@@ -6,35 +6,6 @@ from analyzer import LCAAnalyzer
 from dotenv import load_dotenv
 from auth import Authenticator
 from auth.credits import CreditsManager
-import logging
-
-# Set up logging
-logger = logging.getLogger('app_ui')
-logger.setLevel(logging.DEBUG)
-
-# Create logs directory if it doesn't exist
-if not os.path.exists('logs'):
-    os.makedirs('logs')
-
-# Create file handler
-file_handler = logging.FileHandler('logs/app.log')
-file_handler.setLevel(logging.DEBUG)
-
-# Create console handler
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
-
-# Create formatter
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(formatter)
-console_handler.setFormatter(formatter)
-
-# Add handlers to logger
-logger.addHandler(file_handler)
-logger.addHandler(console_handler)
-
-# Prevent log propagation to root logger to avoid duplicate messages
-logger.propagate = False
 
 # Load environment variables
 load_dotenv()
@@ -59,12 +30,7 @@ authenticator = Authenticator(
 )
 
 # Initialize credits manager (now using Supabase)
-try:
-    credits_manager = CreditsManager()
-    logger.info("Successfully initialized Supabase credits manager")
-except Exception as e:
-    logger.error(f"Failed to initialize Supabase credits manager: {str(e)}")
-    raise
+credits_manager = CreditsManager()
 
 # Add custom CSS
 st.markdown("""
@@ -101,31 +67,24 @@ def get_analyzer():
     )
 
 def main():
-    logger.debug("Starting main application")
     # Check authentication and handle OAuth flow
-    logger.debug("Checking authentication status")
     authenticator.check_auth()
 
     # Login form if not authenticated
     if not st.session_state.connected:
-        logger.debug("User not authenticated, showing login form")
         left_col, center_col, right_col = st.columns([1,2,1])
         with center_col:
             st.title("🌱 Welcome to LCA Benchmarker")
             authenticator.login()
-        logger.debug("Stopping execution at login screen")
         st.stop()
 
     # Main app content (only shown when authenticated)
-    logger.debug("User authenticated, showing main content")
     st.title("LCA Benchmarking and Retrieval")
 
     # Add logout button and credits display to sidebar
     with st.sidebar:
         if st.button("Logout"):
-            logger.debug("Logout button clicked")
             authenticator.logout()
-            logger.debug("Stopping execution after logout")
             st.stop()  # Stop execution immediately to show login screen
 
         # Display remaining credits
@@ -165,97 +124,96 @@ def main():
 
         analyzer = get_analyzer()
         
+        progress_placeholder = st.empty()
+        
+        async def process_stream():
+            if include_web_search:
+                progress_placeholder.text("Searching database and web, this might take a few minutes...")
+                
+                # Create tabs instead of columns for better space management
+                tabs = st.tabs(["Database Results", "Web Results", "Results overview"])
+                
+                with tabs[0]:
+                    db_placeholder = st.empty()
+                with tabs[1]:
+                    web_placeholder = st.empty()
+                with tabs[2]:
+                    table_placeholder = st.empty()
+                
+                # Initialize accumulated text for each section
+                db_text = ""
+                web_text = ""
+                table_text = ""
+                
+                # Add custom CSS for table overflow
+                st.markdown("""
+                    <style>
+                        .stMarkdown {
+                            overflow-x: auto;
+                            max-width: 100%;
+                        }
+                        table {
+                            display: block;
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            overflow-x: auto;
+                        }
+                        td {
+                            max-width: 200px;
+                            white-space: normal;
+                            word-wrap: break-word;
+                            padding: 8px;
+                        }
+                        th {
+                            white-space: normal;
+                            word-wrap: break-word;
+                            max-width: 200px;
+                            padding: 8px;
+                        }
+                    </style>
+                """, unsafe_allow_html=True)
+                
+                # Process streaming results
+                async for chunk in analyzer.analyze(query, include_web_search=True):
+                    if chunk["section"] == "database":
+                        db_text += chunk["content"]
+                        db_placeholder.markdown(f'<div class="database-container">\n\n{db_text}</div>', unsafe_allow_html=True)
+                    elif chunk["section"] == "web":
+                        web_text += chunk["content"]
+                        web_placeholder.markdown(f'<div class="web-container">\n\n{web_text}</div>', unsafe_allow_html=True)
+                    elif chunk["section"] == "table":
+                        table_text += chunk["content"]
+                        table_placeholder.markdown(table_text)
+            else:
+                st.markdown("### Results from database")
+                content_placeholder = st.empty()
+                accumulated_text = ""
+                
+                # Add custom CSS for table overflow in single-view mode
+                st.markdown("""
+                    <style>
+                        .stMarkdown {
+                            overflow-x: auto;
+                            max-width: 100%;
+                        }
+                        table {
+                            white-space: nowrap;
+                            display: block;
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            overflow-x: auto;
+                        }
+                    </style>
+                """, unsafe_allow_html=True)
+                
+                async for chunk in analyzer.analyze(query, include_web_search=False):
+                    accumulated_text += chunk["content"]
+                    content_placeholder.markdown(accumulated_text)
+            
+            progress_placeholder.empty()
+        
         try:
-            progress_placeholder = st.empty()
-            
-            async def process_stream():
-                if include_web_search:
-                    progress_placeholder.text("Searching database and web, this might take a few minutes...")
-                    
-                    # Create tabs instead of columns for better space management
-                    tabs = st.tabs(["Database Results", "Web Results", "Results overview"])
-                    
-                    with tabs[0]:
-                        db_placeholder = st.empty()
-                    with tabs[1]:
-                        web_placeholder = st.empty()
-                    with tabs[2]:
-                        table_placeholder = st.empty()
-                    
-                    # Initialize accumulated text for each section
-                    db_text = ""
-                    web_text = ""
-                    table_text = ""
-                    
-                    # Add custom CSS for table overflow
-                    st.markdown("""
-                        <style>
-                            .stMarkdown {
-                                overflow-x: auto;
-                                max-width: 100%;
-                            }
-                            table {
-                                display: block;
-                                max-width: 1200px;
-                                margin: 0 auto;
-                                overflow-x: auto;
-                            }
-                            td {
-                                max-width: 200px;
-                                white-space: normal;
-                                word-wrap: break-word;
-                                padding: 8px;
-                            }
-                            th {
-                                white-space: normal;
-                                word-wrap: break-word;
-                                max-width: 200px;
-                                padding: 8px;
-                            }
-                        </style>
-                    """, unsafe_allow_html=True)
-                    
-                    # Process streaming results
-                    async for chunk in analyzer.analyze(query, include_web_search=True):
-                        if chunk["section"] == "database":
-                            db_text += chunk["content"]
-                            db_placeholder.markdown(f'<div class="database-container">\n\n{db_text}</div>', unsafe_allow_html=True)
-                        elif chunk["section"] == "web":
-                            web_text += chunk["content"]
-                            web_placeholder.markdown(f'<div class="web-container">\n\n{web_text}</div>', unsafe_allow_html=True)
-                        elif chunk["section"] == "table":
-                            table_text += chunk["content"]
-                            table_placeholder.markdown(table_text)
-                else:
-                    st.markdown("### Results from database")
-                    content_placeholder = st.empty()
-                    accumulated_text = ""
-                    
-                    # Add custom CSS for table overflow in single-view mode
-                    st.markdown("""
-                        <style>
-                            .stMarkdown {
-                                overflow-x: auto;
-                                max-width: 100%;
-                            }
-                            table {
-                                white-space: nowrap;
-                                display: block;
-                                max-width: 1200px;
-                                margin: 0 auto;
-                                overflow-x: auto;
-                            }
-                        </style>
-                    """, unsafe_allow_html=True)
-                    
-                    async for chunk in analyzer.analyze(query, include_web_search=False):
-                        accumulated_text += chunk["content"]
-                        content_placeholder.markdown(accumulated_text)
-                
-                progress_placeholder.empty()
-            
             asyncio.run(process_stream())
-                
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
             st.info("Please check your API keys and try again.")

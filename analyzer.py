@@ -2,7 +2,6 @@ import json
 import requests
 import aiohttp
 import openai
-import logging
 from typing import List, Dict, Any, AsyncGenerator
 from r2r import R2RClient
 from prompts import RETRIEVAL_PROMPT, WEB_SEARCH_PROMPT, MERGER_PROMPT
@@ -43,7 +42,6 @@ class LCAAnalyzer:
             return formatted_chunks
             
         except Exception as e:
-            logging.error(f"Error in get_chunks: {str(e)}")
             raise
 
     def parse_sse_chunk(self, chunk: bytes) -> str:
