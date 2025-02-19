@@ -21,10 +21,10 @@ st.set_page_config(
 )
 
 # Initialize authenticator and credits manager
-allowed_users = os.getenv("ALLOWED_USERS", "").split(",")
+allowed_users = st.secrets.ALLOWED_USERS
 authenticator = Authenticator(
     allowed_users=allowed_users,
-    token_key=os.getenv("TOKEN_KEY"),
+    token_key=st.secrets.TOKEN_KEY,
     secret_path="client_secret_879574062090-6k6vhd2s5qj1gc71mgqdhi2hc0rgjnkq.apps.googleusercontent.com.json",
     redirect_uri="http://localhost:8501/",
 )
