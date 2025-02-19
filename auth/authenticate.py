@@ -33,8 +33,18 @@ class Authenticator:
         self.cookie_name = cookie_name
 
     def _initialize_flow(self) -> google_auth_oauthlib.flow.Flow:
-        flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
-            self.secret_path,
+        client_config = {
+            "web": {
+                "client_id": st.secrets.google_oauth.client_id,
+                "client_secret": st.secrets.google_oauth.client_secret,
+                "auth_uri": st.secrets.google_oauth.auth_uri,
+                "token_uri": st.secrets.google_oauth.token_uri,
+                "auth_provider_x509_cert_url": st.secrets.google_oauth.auth_provider_x509_cert_url,
+                "redirect_uris": st.secrets.google_oauth.redirect_uris
+            }
+        }
+        flow = google_auth_oauthlib.flow.Flow.from_client_config(
+            client_config,
             scopes=[
                 "openid",
                 "https://www.googleapis.com/auth/userinfo.profile",
