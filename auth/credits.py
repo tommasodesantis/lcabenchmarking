@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from datetime import datetime
 from supabase import create_client
 from dotenv import load_dotenv
@@ -7,9 +8,25 @@ class CreditsManager:
     def __init__(self):
         load_dotenv()
         
-        supabase_url = os.getenv("SUPABASE_URL")
-        supabase_key = os.getenv("SUPABASE_KEY")
+        # Try getting from streamlit secrets first
+        supabase_url = st.secrets.get("SUPABASE_URL")
+        supabase_key = st.secrets.get("SUPABASE_KEY")
+        
+        # Log the values (safely)
+        st.write("Debug: Checking Supabase credentials")
+        st.write(f"Debug: URL found: {'Yes' if supabase_url else 'No'}")
+        st.write(f"Debug: Key found: {'Yes' if supabase_key else 'No'}")
+        
+        # If not in streamlit secrets, try environment variables
+        if not supabase_url:
+            supabase_url = os.getenv("SUPABASE_URL")
+            st.write("Debug: Trying environment variable for URL")
+        if not supabase_key:
+            supabase_key = os.getenv("SUPABASE_KEY")
+            st.write("Debug: Trying environment variable for Key")
+        
         if not supabase_url or not supabase_key:
+            st.error("Supabase credentials not found in either Streamlit secrets or environment variables")
             raise ValueError("Supabase credentials not found in environment variables")
         
         self.supabase = create_client(supabase_url, supabase_key)
