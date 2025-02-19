@@ -3,18 +3,6 @@ import jwt
 from jwt import ExpiredSignatureError
 import streamlit as st
 import extra_streamlit_components as stx
-import logging
-
-# Configure logging
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('auth.log'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger('auth.token_manager')
 
 class AuthTokenManager:
     def __init__(
@@ -25,24 +13,9 @@ class AuthTokenManager:
     ):
         self.cookie_manager = stx.CookieManager()
         self.cookie_name = cookie_name
-        
-        # Validate token_key
-        if token_key is None:
-            logger.error("Token key is None")
-            raise ValueError("Token key cannot be None")
-        if not isinstance(token_key, str):
-            logger.error(f"Token key is not a string. Type: {type(token_key)}")
-            raise TypeError(f"Token key must be a string, not {type(token_key)}")
-        if not token_key:
-            logger.error("Token key is empty string")
-            raise ValueError("Token key cannot be empty")
-            
-        self.token_key = str(token_key)  # Ensure it's a string
+        self.token_key = token_key
         self.token_duration_days = token_duration_days
         self.token = None
-        
-        logger.info(f"TokenManager initialized with key type: {type(self.token_key)}")
-        logger.debug(f"Token key value: {self.token_key}")
 
     def get_decoded_token(self) -> str:
         self.token = self.cookie_manager.get(self.cookie_name)
@@ -80,22 +53,8 @@ class AuthTokenManager:
             return None
 
     def _encode_token(self, email: str, oauth_id: str, exp_date: float) -> str:
-        logger.debug(f"Encoding token for email: {email}")
-        logger.debug(f"Token key type: {type(self.token_key)}")
-        logger.debug(f"Token key value: {self.token_key}")
-        
-        payload = {"email": email, "oauth_id": oauth_id, "exp": exp_date}
-        logger.debug(f"JWT payload: {payload}")
-        
-        try:
-            token = jwt.encode(
-                payload,
-                self.token_key,
-                algorithm="HS256",
-            )
-            logger.info("Token encoded successfully")
-            return token
-        except Exception as e:
-            logger.error(f"Token encoding failed: {str(e)}")
-            logger.error(f"Error type: {type(e)}")
-            raise
+        return jwt.encode(
+            {"email": email, "oauth_id": oauth_id, "exp": exp_date},
+            self.token_key,
+            algorithm="HS256",
+        )
