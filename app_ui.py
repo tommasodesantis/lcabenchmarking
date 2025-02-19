@@ -26,7 +26,7 @@ authenticator = Authenticator(
     allowed_users=allowed_users,
     token_key=st.secrets.TOKEN_KEY,
     secret_path="client_secret_879574062090-6k6vhd2s5qj1gc71mgqdhi2hc0rgjnkq.apps.googleusercontent.com.json",
-    redirect_uri="http://localhost:8501/",
+    redirect_uri=["http://localhost:8501/", "https://lcabenchmarking-ykp3ctmxmfh5ctrpsxz8fh.streamlit.app/"],
 )
 
 # Initialize credits manager (now using Supabase)
