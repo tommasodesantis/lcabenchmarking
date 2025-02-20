@@ -7,7 +7,6 @@ from .token_manager import AuthTokenManager
 class Authenticator:
     def __init__(
         self,
-        allowed_users: list,
         redirect_uri: str,
         token_key: str,
         cookie_name: str = "auth_jwt",
@@ -21,7 +20,6 @@ class Authenticator:
         if 'user_info' not in st.session_state:
             st.session_state.user_info = None
         
-        self.allowed_users = allowed_users
         self.redirect_uri = redirect_uri
         self.auth_token_manager = AuthTokenManager(
             cookie_name=cookie_name,
@@ -130,15 +128,12 @@ class Authenticator:
                 oauth_id = user_info.get("id")
                 email = user_info.get("email")
 
-                if email in self.allowed_users:
-                    self.auth_token_manager.set_token(email, oauth_id)
-                    st.session_state.connected = True
-                    st.session_state.user_info = {
-                        "oauth_id": oauth_id,
-                        "email": email,
-                    }
-                else:
-                    st.toast(":red[access denied: Unauthorized user]")
+                self.auth_token_manager.set_token(email, oauth_id)
+                st.session_state.connected = True
+                st.session_state.user_info = {
+                    "oauth_id": oauth_id,
+                    "email": email,
+                }
             except Exception as e:
                 error_msg = str(e)
                 if "redirect_uri_mismatch" in error_msg.lower():

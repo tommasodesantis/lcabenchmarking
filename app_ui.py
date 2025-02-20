@@ -32,9 +32,7 @@ def get_redirect_uri():
     return "https://lcabenchmarking-ykp3ctmxmfh5ctrpsxz8fh.streamlit.app/"
 
 # Initialize authenticator and credits manager
-allowed_users = st.secrets.ALLOWED_USERS
 authenticator = Authenticator(
-    allowed_users=allowed_users,
     token_key=st.secrets.TOKEN_KEY,
     redirect_uri=get_redirect_uri(),
 )
