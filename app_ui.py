@@ -48,6 +48,10 @@ st.markdown("""
 .viewerBadge_text__1JaDK {
     display: none;
 }
+.stInfo {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 0.8rem !important;
+}
 .database-container {
     background-color: #e6f3ff;
     border-left: 3px solid #0066cc;
@@ -115,7 +119,9 @@ def main():
     include_web_search = st.toggle('Include web search', value=False, 
         help='Enable to search both database and web sources. The analysis might take up to a few minutes.')
 
-    st.info("💡 Tip: For better results, avoid using abbreviations. For example, use 'sodium chloride' instead of 'NaCl', and 'polyethylene terephthalate' instead of 'PET'.")
+    st.info("""💡 For better results, avoid using abbreviations. For example, use 'sodium chloride' instead of 'NaCl'
+
+💡 Use dots (.) instead of commas (,) for decimal values. For example: '1.5' instead of '1,5'""")
     
     query = st.text_area(
         "Enter your environmental metrics query:", 
