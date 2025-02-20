@@ -94,7 +94,6 @@ class Authenticator:
 
     def check_auth(self):
         if st.session_state.connected:
-            st.toast(":green[user is authenticated]")
             return
 
         if st.session_state.get("logout"):

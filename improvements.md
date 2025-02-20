@@ -1,0 +1,10 @@
+-add tip on whether using commas or dots for decimals (prompt)
+-for very small values don't limit to two decimals
+-improve deterministic behaviour
+-add EPDs api
+-only have unit metrics in web search
+-make web search default
+-fix the reset thing with auth
+-fix the tables formatting
+-fix prompt so that USERS benchmark is there
+-add a feedback system
