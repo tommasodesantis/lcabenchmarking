@@ -8,7 +8,6 @@ class Authenticator:
     def __init__(
         self,
         allowed_users: list,
-        secret_path: str,
         redirect_uri: str,
         token_key: str,
         cookie_name: str = "auth_jwt",
@@ -23,7 +22,6 @@ class Authenticator:
             st.session_state.user_info = None
         
         self.allowed_users = allowed_users
-        self.secret_path = secret_path
         self.redirect_uri = redirect_uri
         self.auth_token_manager = AuthTokenManager(
             cookie_name=cookie_name,
@@ -40,7 +38,7 @@ class Authenticator:
                 "auth_uri": st.secrets.google_oauth.auth_uri,
                 "token_uri": st.secrets.google_oauth.token_uri,
                 "auth_provider_x509_cert_url": st.secrets.google_oauth.auth_provider_x509_cert_url,
-                "redirect_uris": st.secrets.google_oauth.redirect_uris
+                "redirect_uris": [self.redirect_uri]  # Use environment-specific redirect URI
             }
         }
         flow = google_auth_oauthlib.flow.Flow.from_client_config(
@@ -141,7 +139,14 @@ class Authenticator:
                     }
                 else:
                     st.toast(":red[access denied: Unauthorized user]")
-            except Exception:
+            except Exception as e:
+                error_msg = str(e)
+                if "redirect_uri_mismatch" in error_msg.lower():
+                    st.error(f"OAuth Error: Redirect URI mismatch")
+                    st.error(f"Configured redirect URI: {self.redirect_uri}")
+                    st.error("Please ensure your Google OAuth client configuration matches your environment settings.")
+                else:
+                    st.error(f"Authentication failed: {error_msg}")
                 st.toast(":red[OAuth authentication failed]")
 
     def logout(self):

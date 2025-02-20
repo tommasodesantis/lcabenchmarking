@@ -20,13 +20,23 @@ st.set_page_config(
     layout="wide"
 )
 
+# Function to determine redirect URI based on environment
+def get_redirect_uri():
+    # Check environment from secrets
+    env = st.secrets.get("ENVIRONMENT", "production")
+    
+    if env == "development":
+        return "http://localhost:8501/"
+    
+    # Fallback to production URL
+    return "https://lcabenchmarking-ykp3ctmxmfh5ctrpsxz8fh.streamlit.app/"
+
 # Initialize authenticator and credits manager
 allowed_users = st.secrets.ALLOWED_USERS
 authenticator = Authenticator(
     allowed_users=allowed_users,
     token_key=st.secrets.TOKEN_KEY,
-    secret_path="client_secret_879574062090-6k6vhd2s5qj1gc71mgqdhi2hc0rgjnkq.apps.googleusercontent.com.json",
-    redirect_uri=["http://localhost:8501/", "https://lcabenchmarking-ykp3ctmxmfh5ctrpsxz8fh.streamlit.app/"],
+    redirect_uri=get_redirect_uri(),
 )
 
 # Initialize credits manager (now using Supabase)
