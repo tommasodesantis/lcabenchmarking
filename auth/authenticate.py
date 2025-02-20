@@ -90,7 +90,39 @@ class Authenticator:
                         st.error("Invalid username or password")
             else:
                 auth_url = self.get_auth_url()
-                st.link_button("Login with Google", auth_url)
+                st.markdown(
+                    f"""
+                    <style>
+                    .stButton>a {{
+                        width: 100%;
+                        display: inline-flex;
+                        -webkit-box-align: center;
+                        align-items: center;
+                        -webkit-box-pack: center;
+                        justify-content: center;
+                        font-weight: 400;
+                        padding: calc(0.75em - 1px) 1.5em;
+                        border-radius: 0.25rem;
+                        margin: 0px;
+                        line-height: 1.6;
+                        color: inherit;
+                        width: auto;
+                        background-color: rgb(255, 255, 255);
+                        border: 1px solid rgba(49, 51, 63, 0.2);
+                        text-decoration: none;
+                    }}
+                    .stButton>a:hover {{
+                        border-color: rgb(49, 51, 63);
+                        color: inherit;
+                        text-decoration: none;
+                    }}
+                    </style>
+                    <div class="stButton">
+                        <a href="{auth_url}" target="_self">Login with Google</a>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
 
     def check_auth(self):
         if st.session_state.connected:
