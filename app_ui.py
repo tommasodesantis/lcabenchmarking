@@ -7,6 +7,7 @@ from analyzer import LCAAnalyzer
 from dotenv import load_dotenv
 from auth import Authenticator
 from auth.credits import CreditsManager, OrganizationManager
+from auth.feedback import FeedbackManager
 
 # Load environment variables
 load_dotenv()
@@ -27,6 +28,14 @@ if 'analysis_results' not in st.session_state:
     }
 if 'query' not in st.session_state:
     st.session_state.query = ''
+if 'previous_analysis_exists' not in st.session_state:
+    st.session_state.previous_analysis_exists = False
+if 'previous_analysis_query' not in st.session_state:
+    st.session_state.previous_analysis_query = ''
+if 'previous_analysis_results' not in st.session_state:
+    st.session_state.previous_analysis_results = None
+if 'feedback_just_submitted' not in st.session_state:
+    st.session_state.feedback_just_submitted = False
 
 # Set page config
 st.set_page_config(
@@ -46,7 +55,7 @@ def get_redirect_uri():
     # Fallback to production URL
     return "https://lcabenchmarking-ykp3ctmxmfh5ctrpsxz8fh.streamlit.app/"
 
-# Initialize authenticator and credits manager
+# Initialize authenticator and managers
 authenticator = Authenticator(
     token_key=st.secrets.TOKEN_KEY,
     redirect_uri=get_redirect_uri(),
@@ -55,6 +64,7 @@ authenticator = Authenticator(
 # Initialize managers
 credits_manager = CreditsManager()
 org_manager = OrganizationManager()
+feedback_manager = FeedbackManager()
 
 # Add custom CSS
 st.markdown("""
@@ -207,6 +217,49 @@ def main():
     analyze_button = st.button("Analyze", disabled=st.session_state.analysis_running)
 
     if analyze_button:
+        if st.session_state.previous_analysis_exists and not st.session_state.feedback_just_submitted:
+            # Show feedback form for previous analysis
+            st.info("Before proceeding with the next analysis I kindly ask you to provide a feedback on the previous answer")
+            
+            # Create feedback form
+            with st.form("feedback_form"):
+                # Rating slider
+                rating = st.slider("Rate the previous answer (1-5 stars)", 1, 5, 3)
+                
+                # Feedback message
+                feedback_message = st.text_area("Please provide your feedback or suggestions for improvement:")
+                
+                # Submit button
+                submit = st.form_submit_button("Submit Feedback")
+                
+                if submit:
+                    if not feedback_message:
+                        st.error("Please provide feedback before proceeding.")
+                    else:
+                        try:
+                            # Save feedback
+                            feedback_manager.save_feedback(
+                                email=st.session_state.user_info["email"],
+                                query=st.session_state.previous_analysis_query,
+                                answer=st.session_state.previous_analysis_results,
+                                rating=rating,
+                                feedback_message=feedback_message
+                            )
+                            
+                            st.session_state.feedback_just_submitted = True
+                            st.success("Thank you for your feedback!")
+                        except Exception as e:
+                            st.error(f"Error saving feedback: {str(e)}")
+            
+            st.stop()  # Stop here until feedback is provided
+        
+        # Clear previous analysis state if feedback was just submitted
+        if st.session_state.feedback_just_submitted:
+            st.session_state.previous_analysis_exists = False
+            st.session_state.previous_analysis_query = ''
+            st.session_state.previous_analysis_results = None
+            st.session_state.feedback_just_submitted = False
+
         # Check if user has credits available
         user_email = st.session_state.user_info["email"]
         if not credits_manager.use_credit(user_email):
@@ -289,6 +342,16 @@ def main():
                             unsafe_allow_html=True
                         )
             
+                # Store current analysis for feedback
+                st.session_state.previous_analysis_exists = True
+                st.session_state.previous_analysis_query = st.session_state.query
+                combined_results = {
+                    'database': st.session_state.analysis_results['database'],
+                    'web': st.session_state.analysis_results['web'],
+                    'table': st.session_state.analysis_results['table']
+                }
+                st.session_state.previous_analysis_results = str(combined_results)
+                
                 progress_placeholder.empty()
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
