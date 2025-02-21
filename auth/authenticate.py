@@ -91,6 +91,7 @@ class Authenticator:
             else:
                 auth_url = self.get_auth_url()
                 st.link_button("Login with Google", auth_url)
+                st.caption("Clicking will open a new tab. After login, you can close this tab.")
 
     def check_auth(self):
         if st.session_state.connected:

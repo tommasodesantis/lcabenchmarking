@@ -1,17 +1,22 @@
 import os
+import time
 import streamlit as st
 import nest_asyncio
 import asyncio
 from analyzer import LCAAnalyzer
 from dotenv import load_dotenv
 from auth import Authenticator
-from auth.credits import CreditsManager
+from auth.credits import CreditsManager, OrganizationManager
 
 # Load environment variables
 load_dotenv()
 
 # Enable nested asyncio
 nest_asyncio.apply()
+
+# Initialize session state for organization info form
+if 'org_form_submitted' not in st.session_state:
+    st.session_state.org_form_submitted = False
 
 # Set page config
 st.set_page_config(
@@ -37,8 +42,9 @@ authenticator = Authenticator(
     redirect_uri=get_redirect_uri(),
 )
 
-# Initialize credits manager (now using Supabase)
+# Initialize managers
 credits_manager = CreditsManager()
+org_manager = OrganizationManager()
 
 # Add custom CSS
 st.markdown("""
@@ -78,6 +84,48 @@ def get_analyzer():
         openrouter_api_key=st.secrets["OPENROUTER_API_KEY"]
     )
 
+def show_org_info_form():
+    st.title("🏢 Organization Information")
+    st.info("To access the LCA Benchmarking Tool, please provide information about your organization.")
+    
+    with st.form("org_info_form"):
+        first_name = st.text_input("First Name (optional)")
+        last_name = st.text_input("Last Name (optional)")
+        org_name = st.text_input("Organization name*")
+        role = st.text_input("Your role in the organization*")
+        lca_needs = st.text_area(
+            "Do you experience the problem of data gaps when working with LCA? If yes for what kind of LCA data specifically?*",
+            help="Specify material/process categories that are most relevant for your work"
+        )
+        
+        st.markdown("*Required fields")
+        submit_button = st.form_submit_button("Submit")
+        
+        if submit_button:
+            if not org_name or not role or not lca_needs:
+                st.error("Please fill in all required fields")
+                return False
+            
+            try:
+                org_manager.save_org_info(
+                    st.session_state.user_info["email"],
+                    org_name,
+                    role,
+                    lca_needs,
+                    first_name if first_name else None,
+                    last_name if last_name else None
+                )
+                st.session_state.org_form_submitted = True
+                st.success("Thank you! These information will be very useful to improve this product.")
+                time.sleep(1)  # Give user time to see the success message
+                st.rerun()
+                return True
+            except Exception as e:
+                st.error(f"Error saving organization information: {str(e)}")
+                return False
+    
+    return False
+
 def main():
     # Check authentication and handle OAuth flow
     authenticator.check_auth()
@@ -90,7 +138,14 @@ def main():
             authenticator.login()
         st.stop()
 
-    # Main app content (only shown when authenticated)
+    # Check if organization info is needed for Google OAuth users
+    if (st.session_state.user_info.get("oauth_id") and 
+        not org_manager.has_org_info(st.session_state.user_info["email"]) and 
+        not st.session_state.org_form_submitted):
+        if not show_org_info_form():
+            st.stop()
+
+    # Main app content (only shown when authenticated and org info provided if needed)
     st.title("LCA Benchmarking and Retrieval")
 
     # Add logout button and credits display to sidebar
