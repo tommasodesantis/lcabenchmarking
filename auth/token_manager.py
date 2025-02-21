@@ -3,7 +3,6 @@ import jwt
 from jwt import ExpiredSignatureError
 import streamlit as st
 import extra_streamlit_components as stx
-from typing import Optional
 
 class AuthTokenManager:
     def __init__(
@@ -42,26 +41,13 @@ class AuthTokenManager:
         except KeyError:
             pass
 
-    def _decode_token(self) -> Optional[dict]:
+    def _decode_token(self) -> str:
         try:
-            # Skip expiration validation if analysis is in progress
-            if st.session_state.get('analysis_in_progress', False):
-                # Decode without verification to maintain session during analysis
-                decoded = jwt.decode(
-                    self.token,
-                    self.token_key,
-                    algorithms=["HS256"],
-                    options={"verify_exp": False}
-                )
-                return decoded
-            
-            # Normal token validation when not analyzing
             decoded = jwt.decode(self.token, self.token_key, algorithms=["HS256"])
             return decoded
         except ExpiredSignatureError:
-            if not st.session_state.get('analysis_in_progress', False):
-                st.toast(":red[token expired, please login]")
-                self.delete_token()
+            st.toast(":red[token expired, please login]")
+            self.delete_token()
             return None
         except Exception:
             return None

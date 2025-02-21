@@ -94,11 +94,6 @@ class Authenticator:
                 st.caption("Clicking will open a new tab. After login, you can close this tab.")
 
     def check_auth(self):
-        # Skip auth checks if analysis is in progress
-        if st.session_state.get('analysis_in_progress', False):
-            if st.session_state.connected:
-                return
-        
         if st.session_state.connected:
             return
 

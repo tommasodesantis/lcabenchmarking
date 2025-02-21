@@ -3,9 +3,22 @@ gatherUsageStats = false
 
 [server]
 enableStaticServing = false
+# Prevent automatic reruns
+runOnSave = false
+# Increase timeout for long-running operations
+serverTimeout = 300
 
 [theme]
 showHeader = false
 
 [menu]
 hide_menu_item = ["github", "about", "report"]
+
+[client]
+# Prevent automatic widget state reset
+toolbarMode = "minimal"
+showErrorDetails = true
+
+[runner]
+# Improve handling of long-running async operations
+fastReruns = true

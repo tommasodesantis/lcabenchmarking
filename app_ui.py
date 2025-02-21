@@ -17,8 +17,16 @@ nest_asyncio.apply()
 # Initialize session state variables
 if 'org_form_submitted' not in st.session_state:
     st.session_state.org_form_submitted = False
-if 'analysis_in_progress' not in st.session_state:
-    st.session_state.analysis_in_progress = False
+if 'analysis_running' not in st.session_state:
+    st.session_state.analysis_running = False
+if 'analysis_results' not in st.session_state:
+    st.session_state.analysis_results = {
+        'database': '',
+        'web': '',
+        'table': ''
+    }
+if 'query' not in st.session_state:
+    st.session_state.query = ''
 
 # Set page config
 st.set_page_config(
@@ -186,23 +194,32 @@ def main():
         height=100
     )
 
-    if st.button("Analyze"):
+    # Store query in session state to persist across reruns
+    if query != st.session_state.query:
+        st.session_state.query = query
+        # Reset results when query changes
+        st.session_state.analysis_results = {
+            'database': '',
+            'web': '',
+            'table': ''
+        }
+
+    analyze_button = st.button("Analyze", disabled=st.session_state.analysis_running)
+
+    if analyze_button:
+        # Check if user has credits available
+        user_email = st.session_state.user_info["email"]
+        if not credits_manager.use_credit(user_email):
+            st.error("You have used all your free credits. Please contact the administrator for more credits.")
+            st.stop()
+
+        st.session_state.analysis_running = True
+        analyzer = get_analyzer()
+        
         progress_placeholder = st.empty()
         
-        # Set analysis in progress flag
-        st.session_state.analysis_in_progress = True
-        
-        try:
-            # Check if user has credits available
-            user_email = st.session_state.user_info["email"]
-            if not credits_manager.use_credit(user_email):
-                st.error("You have used all your free credits. Please contact the administrator for more credits.")
-                st.session_state.analysis_in_progress = False
-                return
-
-            analyzer = get_analyzer()
-            
-            async def process_stream():
+        async def process_stream():
+            try:
                 if include_web_search:
                     progress_placeholder.text("Searching database and web, this might take a few minutes...")
                     
@@ -215,12 +232,7 @@ def main():
                         web_placeholder = st.empty()
                     with tabs[2]:
                         table_placeholder = st.empty()
-                    
-                    # Initialize accumulated text for each section
-                    db_text = ""
-                    web_text = ""
-                    table_text = ""
-                    
+                
                     # Add custom CSS for table overflow
                     st.markdown("""
                         <style>
@@ -250,63 +262,46 @@ def main():
                     """, unsafe_allow_html=True)
                     
                     # Process streaming results
-                    async for chunk in analyzer.analyze(query, include_web_search=True):
+                    async for chunk in analyzer.analyze(st.session_state.query, include_web_search=True):
                         if chunk["section"] == "database":
-                            db_text += chunk["content"]
-                            db_placeholder.markdown(f'<div class="database-container">\n\n{db_text}</div>', unsafe_allow_html=True)
+                            st.session_state.analysis_results['database'] += chunk["content"]
+                            db_placeholder.markdown(
+                                f'<div class="database-container">\n\n{st.session_state.analysis_results["database"]}</div>', 
+                                unsafe_allow_html=True
+                            )
                         elif chunk["section"] == "web":
-                            web_text += chunk["content"]
-                            web_placeholder.markdown(f'<div class="web-container">\n\n{web_text}</div>', unsafe_allow_html=True)
+                            st.session_state.analysis_results['web'] += chunk["content"]
+                            web_placeholder.markdown(
+                                f'<div class="web-container">\n\n{st.session_state.analysis_results["web"]}</div>', 
+                                unsafe_allow_html=True
+                            )
                         elif chunk["section"] == "table":
-                            table_text += chunk["content"]
-                            table_placeholder.markdown(table_text)
+                            st.session_state.analysis_results['table'] += chunk["content"]
+                            table_placeholder.markdown(st.session_state.analysis_results['table'])
                 else:
                     content_placeholder = st.empty()
-                    accumulated_text = ""
                     progress_placeholder.text("Searching database, this might take a few seconds...")
                     
-                    # Add custom CSS for table overflow in single-view mode
-                    st.markdown("""
-                        <style>
-                            .stMarkdown {
-                                overflow-x: auto;
-                                max-width: 100%;
-                            }
-                            table {
-                                display: block;
-                                max-width: 1200px;
-                                margin: 0 auto;
-                                overflow-x: auto;
-                            }
-                            td {
-                                max-width: 200px;
-                                white-space: normal;
-                                word-wrap: break-word;
-                                padding: 8px;
-                            }
-                            th {
-                                white-space: normal;
-                                word-wrap: break-word;
-                                max-width: 200px;
-                                padding: 8px;
-                            }
-                        </style>
-                    """, unsafe_allow_html=True)
-                    
-                    async for chunk in analyzer.analyze(query, include_web_search=False):
-                        accumulated_text += chunk["content"]
-                        content_placeholder.markdown(f'<div class="database-container">\n\n{accumulated_text}</div>', unsafe_allow_html=True)
-                
+                    async for chunk in analyzer.analyze(st.session_state.query, include_web_search=False):
+                        st.session_state.analysis_results['database'] += chunk["content"]
+                        content_placeholder.markdown(
+                            f'<div class="database-container">\n\n{st.session_state.analysis_results["database"]}</div>', 
+                            unsafe_allow_html=True
+                        )
+            
                 progress_placeholder.empty()
-
-            # Run the async process
+            except Exception as e:
+                st.error(f"An error occurred: {str(e)}")
+                st.info("Please check your API keys and try again.")
+            finally:
+                st.session_state.analysis_running = False
+        
+        try:
             asyncio.run(process_stream())
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
             st.info("Please check your API keys and try again.")
-        finally:
-            # Always reset analysis flag when done
-            st.session_state.analysis_in_progress = False
+            st.session_state.analysis_running = False
 
 if __name__ == "__main__":
     main()
