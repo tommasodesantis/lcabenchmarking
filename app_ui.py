@@ -116,7 +116,7 @@ def main():
         """)
 
     # Create the Streamlit interface
-    include_web_search = st.toggle('Include web search', value=False, 
+    include_web_search = st.toggle('Include web search', value=True, 
         help='Enable to search both database and web sources. The analysis might take up to a few minutes.')
 
     st.info("""💡 For better results, avoid using abbreviations. For example, use 'sodium chloride' instead of 'NaCl'

@@ -68,10 +68,9 @@ Follow these strict formatting rules:
    - Example: "Global Warming Potential", "Primary Energy Demand"
 
 3. Value (Unit):
-   - Format as "X.XX (unit)"
-   - Round to 2 decimal places
+   - Format values to show first three significant figures
    - Include unit in parentheses
-   - Example: "1.86 (kg CO2eq/kg)"
+   - Examples: "1.89 (kg CO2eq/kg)" (from 1.8923), "0.0076 (kg CO2eq/kg)" (from 0.00765)
 
 4. Reference formatting:
    - Use format: [SHORT_NAME](url) where SHORT_NAME is a brief identifier
@@ -177,10 +176,9 @@ Follow these strict formatting rules:
    - Example: "Global Warming Potential", "Primary Energy Demand"
 
 3. Value (Unit):
-   - Format as "X.XX (unit)"
-   - Round to 2 decimal places
+   - Format values to show first three significant figures
    - Include unit in parentheses
-   - Example: "1.86 (kg CO2eq/kg)"
+   - Examples: "1.89 (kg CO2eq/kg)" (from 1.8923), "0.0076 (kg CO2eq/kg)" (from 0.00765)
 
 4. Reference:
    - Reference MUST be the url where data was sourced
@@ -243,10 +241,9 @@ Follow these strict formatting rules for each column:
    - Example: "Global Warming Potential", "Primary Energy Demand"
 
 3. Value (Unit):
-   - Format: "X.XX (unit)"
-   - Round to 2 decimal places
+   - Format values to show first three significant figures
    - Include unit in parentheses
-   - Example: "1.86 (kg CO2eq/kg)"
+   - Examples: "1.89 (kg CO2eq/kg)" (from 1.8923), "0.0076 (kg CO2eq/kg)" (from 0.00765)
 
 4. Source:
    - Use ONLY: [USER], [DB], or [WEB]

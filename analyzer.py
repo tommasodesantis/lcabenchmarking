@@ -2,6 +2,7 @@ import json
 import requests
 import aiohttp
 import openai
+import asyncio
 from typing import List, Dict, Any, AsyncGenerator
 from r2r import R2RClient
 from prompts import RETRIEVAL_PROMPT, WEB_SEARCH_PROMPT, MERGER_PROMPT
@@ -110,16 +111,16 @@ class LCAAnalyzer:
             {"role": "system", "content": self.web_search_prompt},
             {"role": "user", "content": f"Query: {query}\n\nContext: Please search the web for relevant LCA and environmental metrics data."}
         ]
-        
-        payload = {
-            "model": "perplexity/sonar-reasoning",
-            "messages": messages,
-            "temperature": 0,
-            "top_p": 0,
-            "stream": True
-        }
 
-        async def stream_response():
+        async def attempt_stream(model: str) -> AsyncGenerator[str, None]:
+            payload = {
+                "model": model,
+                "messages": messages,
+                "temperature": 0,
+                "top_p": 0,
+                "stream": True
+            }
+
             try:
                 async with aiohttp.ClientSession() as session:
                     async with session.post(
@@ -127,13 +128,32 @@ class LCAAnalyzer:
                         headers=headers,
                         json=payload
                     ) as response:
-                        async for line in response.content:
-                            if line:
-                                content = self.parse_sse_chunk(line)
-                                if content:
-                                    yield content
+                        first_chunk_received = False
+                        try:
+                            async with asyncio.timeout(45):  # 45 second timeout for first chunk
+                                async for line in response.content:
+                                    if line:
+                                        content = self.parse_sse_chunk(line)
+                                        if content:
+                                            first_chunk_received = True
+                                            yield content
+                                            # After first chunk, continue without timeout
+                                            async for next_line in response.content:
+                                                if next_line:
+                                                    next_content = self.parse_sse_chunk(next_line)
+                                                    if next_content:
+                                                        yield next_content
+                        except asyncio.TimeoutError:
+                            if not first_chunk_received and model == "perplexity/sonar-reasoning":
+                                print(f"Timeout with {model}, falling back to perplexity/sonar")
+                                async for chunk in attempt_stream("perplexity/sonar"):
+                                    yield chunk
+                            else:
+                                # If we timeout with fallback model or after first chunk, try non-streaming
+                                raise
             except Exception as e:
-                print(f"Web search streaming error: {str(e)}")
+                print(f"Web search streaming error with {model}: {str(e)}")
+                # Fallback to non-streaming request
                 response = requests.post(
                     "https://openrouter.ai/api/v1/chat/completions",
                     headers=headers,
@@ -142,7 +162,8 @@ class LCAAnalyzer:
                 result = response.json()
                 yield result["choices"][0]["message"]["content"]
 
-        async for chunk in stream_response():
+        # Start with primary model
+        async for chunk in attempt_stream("perplexity/sonar-reasoning"):
             yield chunk
 
     async def analyze(self, query: str, include_web_search: bool = False) -> AsyncGenerator[Dict[str, str], None]:
