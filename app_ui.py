@@ -199,9 +199,9 @@ def main():
                         table_text += chunk["content"]
                         table_placeholder.markdown(table_text)
             else:
-                st.markdown("### Results from database")
                 content_placeholder = st.empty()
                 accumulated_text = ""
+                progress_placeholder.text("Searching database, this might take a few seconds...")
                 
                 # Add custom CSS for table overflow in single-view mode
                 st.markdown("""
@@ -211,18 +211,29 @@ def main():
                             max-width: 100%;
                         }
                         table {
-                            white-space: nowrap;
                             display: block;
                             max-width: 1200px;
                             margin: 0 auto;
                             overflow-x: auto;
+                        }
+                        td {
+                            max-width: 200px;
+                            white-space: normal;
+                            word-wrap: break-word;
+                            padding: 8px;
+                        }
+                        th {
+                            white-space: normal;
+                            word-wrap: break-word;
+                            max-width: 200px;
+                            padding: 8px;
                         }
                     </style>
                 """, unsafe_allow_html=True)
                 
                 async for chunk in analyzer.analyze(query, include_web_search=False):
                     accumulated_text += chunk["content"]
-                    content_placeholder.markdown(accumulated_text)
+                    content_placeholder.markdown(f'<div class="database-container">\n\n{accumulated_text}</div>', unsafe_allow_html=True)
             
             progress_placeholder.empty()
         
