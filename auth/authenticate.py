@@ -126,7 +126,7 @@ class Authenticator:
                     }}
                     </style>
                     <div class="stButton">
-                        <a href="{auth_url}" target="_self">Login with Google</a>
+                    <a href="{auth_url}" target="_top">Login with Google</a>
                     </div>
                     """,
                     unsafe_allow_html=True
