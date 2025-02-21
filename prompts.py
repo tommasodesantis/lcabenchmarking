@@ -59,7 +59,7 @@ Follow these strict formatting rules:
 
 1. Item/Process:
    - Clear, specific name of material/process
-   - If it is a proxy, use the format "**Proxy:** [Name]"
+   - IMPORTANT: if it is a proxy, use the format "**Proxy:** [Name]"
    - Never combine multiple items in one cell
 
 2. Metrics Description:
@@ -149,7 +149,7 @@ WEB_SEARCH_PROMPT = """You are an environmental metrics expert focused on web-ba
 
 4. DATA REQUIREMENTS:
    Search for:
-   - Environmental impact metrics (CO2eq, energy use, etc.)
+   - Environmental impact metrics (CO2eq, energy use, etc.), prioritizing Unit-based metrics (e.g., kg CO2eq/kg product, MJ/kg) over temporal metrics or absolute values
    - Clear system boundaries
    - Functional units
    - Calculation methodologies
@@ -176,9 +176,13 @@ Follow these strict formatting rules:
    - Example: "Global Warming Potential", "Primary Energy Demand"
 
 3. Value (Unit):
+   - Prioritize unit metrics (e.g., CO2e kg/kg) over temporal metrics or absolute values
+   - If only temporal/absolute values are found in sources, use "n/a" in this column
    - Format values to show first three significant figures
    - Include unit in parentheses
-   - Examples: "1.89 (kg CO2eq/kg)" (from 1.8923), "0.0076 (kg CO2eq/kg)" (from 0.00765)
+   - Examples: 
+     * Preferred: "1.89 (kg CO2eq/kg)", "0.0076 (MJ/kg)"
+     * Avoid if unit metric available: "100 (tons CO2/yr)", "200 (Gtons)", "85 (%)"
 
 4. Reference:
    - Reference MUST be the url where data was sourced
