@@ -29,6 +29,7 @@ class Authenticator:
         self.cookie_name = cookie_name
 
     def _initialize_flow(self) -> google_auth_oauthlib.flow.Flow:
+        print("[OAuth] Initializing flow with redirect URI:", self.redirect_uri)
         client_config = {
             "web": {
                 "client_id": st.secrets.google_oauth.client_id,
@@ -39,6 +40,11 @@ class Authenticator:
                 "redirect_uris": [self.redirect_uri]  # Use environment-specific redirect URI
             }
         }
+        print("[OAuth] Client config:", {
+            "client_id": st.secrets.google_oauth.client_id,
+            "auth_uri": st.secrets.google_oauth.auth_uri,
+            "redirect_uris": [self.redirect_uri]
+        })
         flow = google_auth_oauthlib.flow.Flow.from_client_config(
             client_config,
             scopes=[
@@ -51,10 +57,12 @@ class Authenticator:
         return flow
 
     def get_auth_url(self) -> str:
+        print("[OAuth] Generating auth URL with redirect URI:", self.redirect_uri)
         flow = self._initialize_flow()
         auth_url, _ = flow.authorization_url(
             access_type="offline", include_granted_scopes="true"
         )
+        print("[OAuth] Generated auth URL:", auth_url)
         return auth_url
 
     def check_password_auth(self, username: str, password: str) -> bool:
@@ -149,6 +157,8 @@ class Authenticator:
         auth_code = st.query_params.get("code")
         st.query_params.clear()
         if auth_code:
+            print("[OAuth] Received auth code:", auth_code[:5] + "..." if auth_code else None)
+            print("[OAuth] Current redirect URI:", self.redirect_uri)
             flow = self._initialize_flow()
             try:
                 flow.fetch_token(code=auth_code)
@@ -167,6 +177,8 @@ class Authenticator:
                 }
             except Exception as e:
                 error_msg = str(e)
+                print("[OAuth Error] Authentication failed:", str(e))
+                print("[OAuth Error] Redirect URI:", self.redirect_uri)
                 if "redirect_uri_mismatch" in error_msg.lower():
                     st.error(f"OAuth Error: Redirect URI mismatch")
                     st.error(f"Configured redirect URI: {self.redirect_uri}")
