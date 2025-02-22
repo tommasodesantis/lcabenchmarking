@@ -193,7 +193,7 @@ def main():
         """)
         
         # Add credits text and buttons
-        st.markdown("Out of free credits? Get 5 more by: ")
+        st.markdown("Out of credits? Get 5 more by: ")
         st.link_button("📝 Requesting a new feature", "https://tally.so/r/n0DDd6", type="secondary")
         st.link_button("💭 Giving me a feedback", "https://tally.so/r/3xllXo", type="secondary")
 
