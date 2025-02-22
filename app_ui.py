@@ -68,6 +68,15 @@ st.markdown("""
     font-size: 0.85rem !important;
     padding: 0.5rem 0.8rem !important;
 }
+.credits-container {
+    background-color: #f8f9fa;
+    border-left: 3px solid #6c757d;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
 .database-container {
     background-color: #e6f3ff;
     border-left: 3px solid #0066cc;
@@ -166,7 +175,7 @@ def main():
 
         # Display remaining credits
         remaining_credits = credits_manager.get_credits(st.session_state.user_info["email"])
-        st.metric("Remaining free credits:", remaining_credits)
+        st.markdown(f'<div class="credits-container">Remaining free credits: {remaining_credits}</div>', unsafe_allow_html=True)
 
         st.header("About")
         st.markdown("""
@@ -178,7 +187,12 @@ def main():
         
         ---
         Developed by [Tommaso De Santis](https://www.linkedin.com/in/tommaso-de-santis/)
+
+        ---
         """)
+        
+        # Add feedback button
+        st.link_button("📝 Request a new feature", "https://tally.so/r/n0DDd6", type="secondary")
 
     # Create the Streamlit interface
     include_web_search = st.toggle('Include web search', value=True, 
