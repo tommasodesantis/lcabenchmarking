@@ -179,22 +179,23 @@ def main():
 
         st.header("About")
         st.markdown("""
-        This tool helps retrieve and benchmark environmental metrics using AI connected to a life-cycle assessment (LCA) database (e.g. Idemat, Agribalyse, etc) and the web.
+        This tool helps retrieve and benchmark environmental metrics using AI connected to a life-cycle assessment (LCA) database and the web.
 
         I'm working on expanding the database to include as many LCA data as possible from published studies. 
                     
         My mission: mitigating uncertainty and filling data gaps in LCA.
         
         ---
-        Developed by [Tommaso De Santis](https://www.linkedin.com/in/tommaso-de-santis/)
+        Developed by [Tommaso De Santis](https://www.linkedin.com/in/tommaso-de-santis/). Happy to
+        [schedule a call](https://cal.com/tommaso-de-santis/lcabench-intro-call) to discuss your use cases.
 
         ---
         """)
         
         # Add credits text and buttons
-        st.markdown("Want to get 5 more free credits? Do one of the following: ")
-        st.link_button("📝 Request a new feature", "https://tally.so/r/n0DDd6", type="secondary")
-        st.link_button("💭 Give me a feedback", "https://tally.so/r/3xllXo", type="secondary")
+        st.markdown("Out of free credits? Get 5 more by: ")
+        st.link_button("📝 Requesting a new feature", "https://tally.so/r/n0DDd6", type="secondary")
+        st.link_button("💭 Giving me a feedback", "https://tally.so/r/3xllXo", type="secondary")
 
     # Create the Streamlit interface
     include_web_search = st.toggle('Include web search', value=True, 
@@ -226,7 +227,7 @@ def main():
         # Check if user has credits available
         user_email = st.session_state.user_info["email"]
         if not credits_manager.use_credit(user_email):
-            st.error("You have used all your free credits. Please contact the administrator for more credits.")
+            st.error("You have used all your free credits. Interested in using LCAbench in your organization? Schedule a call to discuss option: [book a slot](https://cal.com/tommaso-de-santis/lcabench-intro-call)")
             st.stop()
 
         st.session_state.analysis_running = True
