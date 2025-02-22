@@ -13,3 +13,4 @@ PyJWT
 python-dotenv
 extra-streamlit-components
 supabase
+openai

@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 WORKDIR /app
 
@@ -46,11 +46,11 @@ redirect_uris = [\"http://localhost:8501/\"]" > .streamlit/secrets.toml' > /app/
 
 RUN chmod +x /app/generate_secrets.sh
 
-# Expose Streamlit port
-EXPOSE 8501
+# Expose port
+EXPOSE ${PORT:-8501}
 
 # Add health check
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+HEALTHCHECK CMD curl --fail http://localhost:${PORT:-8501}/_stcore/health
 
 # Run the application
-ENTRYPOINT ["/bin/sh", "-c", "/app/generate_secrets.sh && streamlit run app_ui.py --server.port=8501 --server.address=0.0.0.0"]
+ENTRYPOINT ["/bin/sh", "-c", "/app/generate_secrets.sh && streamlit run app_ui.py --server.port=${PORT:-8501} --server.address=0.0.0.0"]
