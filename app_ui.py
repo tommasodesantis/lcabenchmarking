@@ -44,7 +44,7 @@ def get_redirect_uri():
         return "http://localhost:8501/"
     
     # Fallback to production URL
-    return "https://lcabenchmarking-ykp3ctmxmfh5ctrpsxz8fh.streamlit.app/"
+    return "https://lcabenchmarking.streamlit.app/"
 
 # Initialize authenticator and credits manager
 authenticator = Authenticator(
