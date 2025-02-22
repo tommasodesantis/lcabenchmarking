@@ -191,8 +191,10 @@ def main():
         ---
         """)
         
-        # Add feedback button
+        # Add credits text and buttons
+        st.markdown("Want to get 5 more free credits? Do one of the following: ")
         st.link_button("📝 Request a new feature", "https://tally.so/r/n0DDd6", type="secondary")
+        st.link_button("💭 Give me a feedback", "https://tally.so/r/3xllXo", type="secondary")
 
     # Create the Streamlit interface
     include_web_search = st.toggle('Include web search', value=True, 

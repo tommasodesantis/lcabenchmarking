@@ -101,7 +101,7 @@ Do not:
 - Mix incompatible methodologies without clear warnings
 
 At the end of your response, ALWAYS include:
-"**We want to make this tool the best datahub for LCA. Your feedback will help us to improve:** [click here to tell us how we did](https://tally.so/r/3xllXo)" """
+"**We want to make this tool the best datahub for LCA. Your feedback will help us to improve:** [click here to tell us how we did and get 5 extra credits](https://tally.so/r/3xllXo)" """
 
 WEB_SEARCH_PROMPT = """You are an environmental metrics expert focused on web-based retrieval of LCA data. Your purpose is to:
 
@@ -217,7 +217,7 @@ Do not:
 - Include data without verifiable sources
 
 At the end of your response, ALWAYS include:
-"**We want to make this tool the best datahub for LCA. Your feedback will help us to improve:** [click here to tell us how we did](https://tally.so/r/3xllXo)" """
+"**We want to make this tool the best datahub for LCA. Your feedback will help us to improve:** [click here to tell us how we did and get 5 extra credits](https://tally.so/r/3xllXo)" """
 
 MERGER_PROMPT = """You are an environmental metrics expert tasked with providing a synthesis and creating a strictly formatted comparison table. Your sources are:
 1. Database results (containing structured LCA metrics)
@@ -323,4 +323,4 @@ Additional Rules:
 6. No combining multiple values in single cells
 
 At the end of your response, ALWAYS include:
-"**We want to make this tool the best datahub for LCA. Your feedback will help us to improve:** [click here to tell us how we did](https://tally.so/r/3xllXo)" """
+"**We want to make this tool the best datahub for LCA. Your feedback will help us to improve:** [click here to tell us how we did and get 5 extra credits](https://tally.so/r/3xllXo)" """
